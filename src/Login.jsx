@@ -1,18 +1,37 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-export const Login=()=>{
 
-  const navigate=useNavigate();
+
+export const Login=({setUser})=>{
+
+    const navigate=useNavigate();
+    const [name, setName] = useState('');
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
+    
 
-    const handleSubmit=(e)=>{
+    const handleSubmit=async(e)=>{
         e.preventDefault();
+        if(!name||!email) return;
+    setUser({ name:name, email:email});
+    navigate('/cereri');
     }
 
     return (
+        
         <div className="auth-form-container">
-       <form onSubmit={handleSubmit}>
+            <h2>Login</h2>
+       <form action="POST" onSubmit={handleSubmit}>
+         <label for='name' >
+            name
+          </label>
+          <input
+            type='text'
+            className='form-input'
+            id='name'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         <label for="email">Email</label>
         <br/>
         <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
@@ -21,13 +40,14 @@ export const Login=()=>{
         <br/>
         <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="*******" name="password" id="password" />
         <br/>
-       </form>
-               <button type="submit" onClick={()=>navigate('/')}>
+        <button type="submit" >
                     Log In
                     </button>
+       </form>
+               
        <br/>
        <button className="link-btn" onClick={()=>navigate('/register')}>Don't have an account? Register here</button>
        </div>
     );
-}
+};
 export default Login;

@@ -10,11 +10,15 @@ import About from "./routes/About";
 import Contact from "./routes/Contact";
 import Cereri from "./routes/Cereri";
 import Status from "./routes/Status";
+import Error from "./routes/Error";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 
 
 
 function App() {
+    const[user,setUser]=useState(null);
+
   return(
     <div className="App">
       <Routes>
@@ -22,14 +26,19 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/status" element={<Status/>}/>
-        <Route path="/cereri" element={<Cereri />}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/login" element={
+        <Login setUser={setUser}/>}/>
+        <Route path="/cereri" element={
+        <ProtectedRoute user={user}>
+          <Cereri user={user}/>
+          </ProtectedRoute>}
+        />
         <Route path="/register" element={<Register/>}/>
-
+        <Route path="/*" element={<Error/>}/>
       </Routes>
     
     </div>
-  )
+  );
 /*  const [currentForm,setCurrentForm]=useState('login');
   const toggleForm=(formName)=>{
     setCurrentForm(formName);

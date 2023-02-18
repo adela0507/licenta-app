@@ -1,17 +1,19 @@
 import Aplication from "../components/Aplication";
-import { redirect } from "react-router-dom";
 import Navbar from "../components/Navbar"
 
 
-function Cereri(){
+const Cereri=({user})=>{
    /* if(!authorized){
         return <redirect to="/login" />;
     }*/
 return(
     <>
-<Navbar></Navbar>
+     <h1>Hello {user?.name}</h1>
+<Navbar/>
     <Aplication/>
+
     </>
+
 );
 }
 export default Cereri;

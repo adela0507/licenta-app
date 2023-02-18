@@ -5,7 +5,8 @@ function About(){
 return(
     <>
     <Navbar/>
-    <Experience/>    
+    <Experience/>   
+     
     </>
 );
 }

@@ -2,11 +2,11 @@ import React,{ useState,useEffect } from "react";
 import "./HeroStyle.css";
 import Navbar from "../components/Navbar"
 
-function Aplication(){
+const Aplication=({user})=>{
     return(
         <section className="section">
         <div className="title">
-            <h2 className="white">Bine ati venit!</h2> <br />
+            <h2 className="white">Bine ati venit</h2> <br />
         </div>
         <form action="" method="get">
             <p className="cerere">
