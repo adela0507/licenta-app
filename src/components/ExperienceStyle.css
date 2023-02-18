@@ -1,0 +1,23 @@
+a {
+    text-decoration: none;
+        color: aliceblue;
+    font-weight: bold;
+}
+
+p {
+    font-family: Roboto;
+    text-align: justify;
+
+}
+
+ul{
+    text-align: left;
+    color:aliceblue;
+}
+
+
+.expimage{
+width: 400px;
+height: 4000;
+border-radius: 10%;
+}

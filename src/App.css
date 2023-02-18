@@ -1,8 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .App{
     text-align: center;
     display: flex;
     min-height: 100vh;
-    align-items: center;
     justify-content: center;
     background-image: linear-gradient(79deg,#c73e65,#a525a5 48%,#0f80dd);
 }
@@ -38,3 +42,15 @@ button{
     color:#ebf6ff;
     text-decoration: underline;
 }
+ article.activeSlide {
+     opacity: 1;
+     transform: translateX(0);
+ }
+
+ article.lastSlide {
+     transform: translateX(-100%);
+ }
+
+ article.nextSlide {
+     transform: translateX(100%);
+ }

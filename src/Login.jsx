@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
+export const Login=()=>{
 
-export const Login=(props)=>{
+  const navigate=useNavigate();
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
 
@@ -19,10 +21,13 @@ export const Login=(props)=>{
         <br/>
         <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="*******" name="password" id="password" />
         <br/>
-        <button type="submit">Log In</button>
        </form>
+               <button type="submit" onClick={()=>navigate('/')}>
+                    Log In
+                    </button>
        <br/>
-       <button className="link-btn" onClick={()=>props.onFormSwitch('register')}>Don't have an account? Register here</button>
+       <button className="link-btn" onClick={()=>navigate('/register')}>Don't have an account? Register here</button>
        </div>
     );
 }
+export default Login;
