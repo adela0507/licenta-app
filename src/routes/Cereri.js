@@ -1,18 +1,19 @@
 import Aplication from "../components/Aplication";
 import Navbar from "../components/Navbar"
-
+import Footer from "../components/Footer";
 
 const Cereri=({user})=>{
    /* if(!authorized){
         return <redirect to="/login" />;
     }*/
 return(
-    <>
-     <h1>Hello {user?.name}</h1>
+    <div>
+     <h1 className="white1">Bine ai venit, {user?.name}!</h1>
 <Navbar/>
     <Aplication/>
+    <Footer/>
 
-    </>
+    </div>
 
 );
 }

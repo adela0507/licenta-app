@@ -9,6 +9,7 @@ body {
 
 ul {
     list-style-type: none;
+    padding-left: 40px;
 }
 
 a {
@@ -238,6 +239,10 @@ article.nextSlide {
 .white{
     color: aliceblue;
 }
+.white1{
+    padding-top: 160px;
+    color: aliceblue;
+}
 .desc{
     color: aliceblue;
 }
@@ -268,4 +273,115 @@ text-align: center;
 }
 form{
     text-align: justify;
+}
+.footer
+{
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 20px;
+    color:rgb(4, 4, 134);
+    height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--clr-black);
+  text-align: center;
+  background-color: white;
+width: 1900px;  
+
+}
+.page {
+    min-height: calc(100vh - (20vh + 10rem));
+}
+.section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+.section {
+    padding: 5rem 0;
+}
+.left{
+    text-align: left;
+    color: aliceblue;
+    padding-left: 40px;
+}
+.left h3{
+    text-align: left;
+}
+.left p{
+    text-align: left;
+
+}
+.right{
+    text-align: right;
+    color: aliceblue;
+    padding-right: 40px;
+}
+
+.right h3 {
+    text-align: right;
+}
+.right p{
+    text-align: right;
+}
+.photo-left {
+    float: left;
+    margin-right: 0px;
+    margin-bottom: 40px;
+    padding-left: 40px;
+
+}
+.photo-left1 {
+    float: left;
+    margin-bottom: 40px;
+    width: 400px;
+    height: 300px;
+}
+.photo-right {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 40px;
+
+}
+.photo-right1 {
+    float: right;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    width: 400px;
+    padding-top: 60px;
+
+}
+.content {
+    padding-top: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 8rem;
+    margin-top: 2rem;
+}
+.content1 {
+    padding-top: 50px;
+    display: grid;
+    text-align:left;
+    font-size: 10px;
+}
+
+.content h1{
+color:#f6f3f4;
+}
+.text-home{
+    padding-top: 40px;
+    text-align: left;
+    color: white;
+    padding-right: 20px;
+}
+.special-text-home{
+    color: red;
+}
+.button-text{
+    color: purple;
+}
+.button-home{
+align-items: left;
 }

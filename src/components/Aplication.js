@@ -1,12 +1,12 @@
 import React,{ useState,useEffect } from "react";
 import "./HeroStyle.css";
 import Navbar from "../components/Navbar"
+import { Link } from "react-router-dom";
 
 const Aplication=({user})=>{
     return(
         <section className="section">
         <div className="title">
-            <h2 className="white">Bine ati venit</h2> <br />
         </div>
         <form action="" method="get">
             <p className="cerere">
@@ -134,7 +134,7 @@ AN UNIVERSITAR 2023-2024</p>
             Declar pe proprie răspundere că datele prezentate în cerere sunt reale și complete. Declar că am luat cunostință de prevederile
             Regulamentului privind acordarea de locuri în căminele studențești pentru studenții din Universitatea Babeș-Bolyai. 
             </p>
-            <button type="submit">Trimite</button>
+            <button type="submit" ><Link to='/status' className="button-text">Trimite</Link></button>
         </form>
         </section>
 

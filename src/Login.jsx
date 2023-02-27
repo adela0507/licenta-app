@@ -23,8 +23,9 @@ export const Login=({setUser})=>{
             <h2>Login</h2>
        <form action="POST" onSubmit={handleSubmit}>
          <label for='name' >
-            name
+            Nume
           </label>
+          <br />
           <input
             type='text'
             className='form-input'
@@ -32,6 +33,7 @@ export const Login=({setUser})=>{
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <br />
         <label for="email">Email</label>
         <br/>
         <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" />

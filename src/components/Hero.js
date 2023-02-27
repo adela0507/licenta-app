@@ -1,74 +1,22 @@
 import React,{ useState,useEffect } from "react";
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import "./HeroStyle.css";
-import data from './data';
-
+import { Link } from "react-router-dom";
+import img1 from'../components/img1.jpg';
 
 
 function Hero(){
-    const[camin,setCamin]=useState(data);
-    const[index,setIndex]=useState(0);
-
-useEffect(() => {
-    const lastIndex = camin.length - 1;
-    if (index < 0) {
-      setIndex(lastIndex);
-    }
-    if (index > lastIndex) {
-      setIndex(0);
-    }
-  }, [index, camin]);
-
-  useEffect(() => {
-    let slider = setInterval(() => {
-      setIndex(index + 1);
-    }, 5000);
-    return () => {
-      clearInterval(slider);
-    };
-  }, [index]);
-
     return(
-      
-        <section className="section">
-        <div className="title">
-            <h2> <span className="white">Prezentare generala</span></h2>
-        </div>
-        <div className="section-center">
-            {camin.map((cazare,cazareIndex)=>{
-                const{id,image,image2,title,description}=cazare;
+      <section className="section">
+        <img src={img1} alt="" className="photo-right1"/> <br /><br /> <br />
+   <div className="content1">
+    <h3>Caminul, <i>casa</i> ta pentru urmatorul an universitar!</h3>
+    <p className="text-home">Pentru mai multe informatii ti-am pus la dispozitie o pagina destinata curiozitatilor pe care toti le au despre cum e viata de camin <Link to='/about' className="special-text-home">ai detali aici</Link> sau daca vrei sa explorezi caminele in care ai putea locui <Link  to='/camine' className="special-text-home">apasa aici</Link>!</p>
 
-                let position='nextSlide';
-                if(cazareIndex===index)
-                {
-                    position='activeSlide';
-                }
-                if(cazareIndex===index-1 || index===0 && cazareIndex===camin.length-1)
-                {
-                    position='lastSlide';
-                }
-                return (
-                  
-            <article className={position} key={id}>
-              <div className="cadran">
-              <img src={image} alt={title} className="person-img" /><br />
-              <h3>{title}</h3>
-              <br />
-              <h5><p className="desc">{description}</p></h5>
-              <br />
-              <img className="image2" src={image2} alt={title} />
-              <br /> <br />
-              </div>
-            </article>
-          );
-            })}
-            <button className="prev" onClick={() => setIndex(index - 1)}>
-                 <FiChevronLeft /> </button>
-        <button className="next" onClick={() => setIndex(index + 1)}>
-                  <FiChevronRight /></button>
-        <br />
-        </div>
-        </section>
+     <br />
+   </div>
+        <button className="button-home"><Link to='/cereri' className="button-text">Vezi caminele</Link></button> 
+
+</section>
     );
 }
 

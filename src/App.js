@@ -1,19 +1,19 @@
 import React, {useState} from "react";
-import user from './data-user';
 import { Register } from "./Register";
 import  {Login}  from "./Login";
 import './App.css';
+import styled from 'styled-components'
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Home from "./routes/Home";
 import{Route,Routes} from "react-router-dom";
-import About from "./routes/About";
-import Contact from "./routes/Contact";
-import Cereri from "./routes/Cereri";
-import Status from "./routes/Status";
-import Error from "./routes/Error";
+// import Home from "./routes/Home";
+// import About from "./routes/About";
+// import Contact from "./routes/Contact";
+// import Status from "./routes/Status";
+// import Error from "./routes/Error";
 import ProtectedRoute from "./routes/ProtectedRoute";
-
-
+import {Home,About,Cereri,Contact,Error,Status,Camine}from './routes';
+import SingleCamin from './components/SingleCamin';
 
 
 function App() {
@@ -24,7 +24,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
-        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/camine" element={<Camine/>}/>
+        <Route path="/camine/:id" element={<SingleCamin/>}/>
         <Route path="/status" element={<Status/>}/>
         <Route path="/login" element={
         <Login setUser={setUser}/>}/>
@@ -36,7 +37,6 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path="/*" element={<Error/>}/>
       </Routes>
-    
     </div>
   );
 /*  const [currentForm,setCurrentForm]=useState('login');
