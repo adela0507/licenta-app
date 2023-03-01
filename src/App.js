@@ -14,6 +14,7 @@ import{Route,Routes} from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import {Home,About,Cereri,Contact,Error,Status,Camine}from './routes';
 import SingleCamin from './components/SingleCamin';
+import Contract from "./routes/Contract";
 
 
 function App() {
@@ -25,8 +26,9 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/camine" element={<Camine/>}/>
-        <Route path="/camine/:id" element={<SingleCamin/>}/>
+        { <Route path="/camine/:id" element={<SingleCamin/>}/> }
         <Route path="/status" element={<Status/>}/>
+        <Route path="/contract" element={<Contract/>}/>
         <Route path="/login" element={
         <Login setUser={setUser}/>}/>
         <Route path="/cereri" element={

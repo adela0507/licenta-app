@@ -20,6 +20,13 @@ const camin=[
         title:'Caminul Economica 1',
         description:'mixt, 3 locuri/cameră, baie în cameră, oficiu comun',
     },
+    {
+        id:3,
+        image:'https://www.ubbcluj.ro/images/picture_caminEconomica-1_2.jpg',
+        image2:'https://www.ubbcluj.ro/images/picture_caminEconomica-1_1.jpg',
+        title:'Caminul Economica 1',
+        description:'mixt, 3 locuri/cameră, baie în cameră, oficiu comun',
+    },
 ];
 
 export default camin;

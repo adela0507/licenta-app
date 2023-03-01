@@ -136,6 +136,8 @@ AN UNIVERSITAR 2023-2024</p>
             </p>
             <button type="submit" ><Link to='/status' className="button-text">Trimite</Link></button>
         </form>
+        <button  ><Link to='/contract' className="button-text">Ai fost deja acceptat?</Link></button>
+
         </section>
 
     );
