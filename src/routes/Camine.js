@@ -25,7 +25,6 @@ return(
                     <br />
                     <Link to='/camine/:id'><img src={cazare.image}  /></Link>
                     <br /><br />
-                    <p>{cazare.description}</p>
                    </div>
                 );
             })}

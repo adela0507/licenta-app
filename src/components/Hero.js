@@ -2,6 +2,7 @@ import React,{ useState,useEffect } from "react";
 import "./HeroStyle.css";
 import { Link } from "react-router-dom";
 import img1 from'../components/img1.jpg';
+import Review from "./Reviews";
 
 
 function Hero(){
@@ -15,7 +16,7 @@ function Hero(){
      <br />
    </div>
         <button className="button-home"><Link to='/cereri' className="button-text">Vezi caminele</Link></button> 
-
+<Review/>
 </section>
     );
 }
