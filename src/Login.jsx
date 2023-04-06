@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from '../src//context/appContext'
 import Alert from "./components/Alert";
@@ -8,12 +8,13 @@ const initialState={
   name:'',
   email:'',
   password:'',
+  isMember:true,
 }
-export const Login=({setUser})=>{
+export const Login=()=>{
 
     const navigate=useNavigate();
     const [value,setValue]=useState(initialState);
-    const {showAlert,isLoading,displayAlert}=useAppContext();
+    const {showAlert,displayAlert,user,loginUser}=useAppContext();
 
     // const [name, setName] = useState('');
     // const [email,setEmail]=useState('');
@@ -22,20 +23,33 @@ export const Login=({setUser})=>{
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        const{email,name,password}=value;
-        if(!name || !email || !password) 
+        const{email,name,password,isMember}=value;
+        if((!isMember && !name) || !email || !password) 
         {
-          displayAlert()
-          return
+          displayAlert();
+          return;
         }
-    setUser({ name:value.name, email:value.email});
-    navigate('/cereri');
+        const currentUser={name,email,password};
+    if(isMember){
+        loginUser(currentUser);
+    }
+    else{
+        navigate('/register');
+    }
+    
     }
 
     const handleChange=(e)=>{
       setValue({...value, [e.target.name]: e.target.value})
-      console.log(e.target);
-    }
+    };
+    useEffect(()=>{
+if(user){
+    setTimeout(()=>{
+    navigate('/')
+    },3000)
+
+}
+    },[user,navigate]);
 
     return (
         
@@ -43,7 +57,7 @@ export const Login=({setUser})=>{
             <h2>Login</h2>
        <form action="POST" onSubmit={handleSubmit}>
         {showAlert &&<Alert/>}
-         <label for='name' >
+         <label htmlFor='name' >
             Nume
           </label>
           <br />
@@ -52,7 +66,7 @@ export const Login=({setUser})=>{
         type="text" placeholder='name' name="name" id="name" />
         
           <br />
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <br/>
         <input value={value.email} 
         onChange={handleChange} 
@@ -61,7 +75,7 @@ export const Login=({setUser})=>{
         id="email" 
         name="email" />
         <br/>
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <br/>
         <input value={value.password} 
         onChange={handleChange} type="password" placeholder="*******" name="password" id="password" />
