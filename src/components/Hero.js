@@ -10,12 +10,11 @@ function Hero(){
       <section className="section">
         <img src={img1} alt="" className="photo-right1"/> <br /><br /> <br />
    <div className="content1">
-    <h3>Caminul, <i>casa</i> ta pentru urmatorul an universitar!</h3>
-    <p className="text-home">Pentru mai multe informatii ti-am pus la dispozitie o pagina destinata curiozitatilor pe care toti le au despre cum e viata de camin <Link to='/about' className="special-text-home">ai detali aici</Link> sau daca vrei sa explorezi caminele in care ai putea locui <Link  to='/camine' className="special-text-home">apasa aici</Link>!</p>
-
+    <h3>Căminul, <i>casa</i> ta pentru următorul an universitar!</h3>
+    <p className="text-home">Pentru mai multe informaţii ţi-am pus la dispoziţie o pagina destinată curiozităţilor pe care majoritatea studenţiilor le au despre cum e viaţa petrecută în cămin, <Link to='/about' className="special-text-home">ai detali aici</Link>! <br /> Dacă eşti curios şi doreşti să explorezi căminele în care ai putea locui <Link  to='/camine' className="special-text-home">apasa aici</Link>!</p>
      <br />
    </div>
-        <button className="button-home"><Link to='/cereri' className="button-text">Vezi caminele</Link></button> 
+        <button className="button-home"><Link to='/cereri' className="button-text">Completează acum cererea!</Link></button> 
 <Review/>
 </section>
     );

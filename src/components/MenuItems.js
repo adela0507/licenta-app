@@ -4,28 +4,24 @@ import {Component} from "react";
 
 export const MenuItems=[
     {
-        title:"HOME",
+        title:"Acasă",
         url:"/",
         cName :"nav-links"
     },
       
       {
-        title:"About",
+        title:"Despre",
         url:"/about",
         cName :"nav-links"
     },
     {
-        title:"Camine",
+        title:"Cămine",
         url:"/camine",
         cName :"nav-links"
     },
-    ,{
-        title:"LogIn",
-        url:"/Login",
-        cName :"nav-links"
-    },
+    ,
     {
-        title:"Cereri",
+        title:"Cerere",
         url:"/cereri",
         cName :"nav-links"
     },
@@ -37,7 +33,7 @@ export const MenuItems=[
       {
         title:"Status",
         url:"/status",
-        cName :"nav-links"
+        cName :"nav-links-web"
     }
 ]
 

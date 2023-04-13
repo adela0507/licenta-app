@@ -80,7 +80,7 @@ if(user){
         <input value={value.password} 
         onChange={handleChange} type="password" placeholder="*******" name="password" id="password" />
         <br/>
-        <button type="submit" >Log In</button>
+        <button type="submit" >Login</button>
        </form>
                
        <br/>

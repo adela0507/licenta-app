@@ -1,7 +1,7 @@
 import React,{ useState,useEffect } from "react";
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import "./HeroStyle.css";
-import data from './data';
+import data from './user-data';
 
 
 
@@ -50,7 +50,7 @@ useEffect(() => {
                 return (
                   
             <article className={position} key={id}>
-              <div className="cadran">
+              <div >
               <img src={image} alt={title} className="person-img" /><br />
               <h3>{title}</h3>
               <br />

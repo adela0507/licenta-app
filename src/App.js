@@ -32,9 +32,7 @@ function App() {
         <Route path="/login" element={
         <Login setUser={setUser}/>}/>
         <Route path="/cereri" element={
-        <ProtectedRoute user={user}>
-          <Cereri user={user}/>
-          </ProtectedRoute>}
+          <Cereri />}
         />
         <Route path="/register" element={<Register/>}/>
         <Route path="/*" element={<Error/>}/>

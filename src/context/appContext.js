@@ -1,7 +1,7 @@
 import React,{useReducer,useContext,useState} from "react";
 import reducer from "./reducer";
 import axios from 'axios'
-import { DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
+import { LOGOUT_USER,DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
 
 const token=localStorage.getItem('token')
 const user=localStorage.getItem('user')
@@ -12,7 +12,7 @@ const initialState={
     alertType:'',
     alertText:'',
     token:token,
-    user:null,
+    user:user? JSON.parse(user):null,
 
 }
 
@@ -72,10 +72,14 @@ const loginUser=async(currentUser)=>{
     }
     clearAlert()
 }
+const logoutUser=()=>{
+dispatch({type:LOGOUT_USER})
+removeUserFromLocalStorage()
+}
 
     return(
 <AppContext.Provider value={{...state,displayAlert,
-registerUser,loginUser}}>
+registerUser,loginUser,logoutUser}}>
     {children}
 </AppContext.Provider>
 );
