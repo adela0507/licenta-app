@@ -1,8 +1,7 @@
 import React, {useState,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from '../src//context/appContext'
-import Alert from "./components/Alert";
-
+import Alert from './components/Alert'
 
 const initialState={
   name:'',
@@ -16,9 +15,7 @@ export const Login=()=>{
     const [value,setValue]=useState(initialState);
     const {showAlert,displayAlert,user,loginUser}=useAppContext();
 
-    // const [name, setName] = useState('');
-    // const [email,setEmail]=useState('');
-    // const [password,setPassword]=useState('');
+;
     
 
     const handleSubmit=async(e)=>{
@@ -56,7 +53,9 @@ if(user){
         <div className="auth-form-container">
             <h2>Login</h2>
        <form action="POST" onSubmit={handleSubmit}>
-        {showAlert &&<Alert/>}
+        <div className="alert-danger">
+        {showAlert && <Alert/>}
+        </div>
          <label htmlFor='name' >
             Nume
           </label>

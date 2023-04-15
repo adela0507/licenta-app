@@ -15,19 +15,14 @@
     
 }
 
-.navbar-logo{
-    color: black;
-    font-size: 2rem;
-    cursor: pointer;
-}
 
 .nav-menu{
     display: grid;
-    grid-template-columns: repeat(6,auto);
+    grid-template-columns: repeat(5,auto);
     grid-gap: 10px ;
     list-style: none;
     align-items: center;
-
+    
 }
 .nav-links-web{
     display: none;
@@ -36,7 +31,7 @@
    text-decoration: none; 
    color: black;
    font-weight: 600;
-   padding: 0.7rem 1rem;
+   padding: 0.2rem 0.8rem;
    white-space: nowrap;
 
 }
@@ -53,7 +48,6 @@ button{
     border-radius: 0.3rem;
     font-size: 1rem;
     font-weight: 600;
-    border: none;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
@@ -98,6 +92,7 @@ button :hoover{
             width: 100%;
             font-size: 1.2rem;
             padding: 2 rem 0;
+            
         }
         .nav-links:hover{
             background-color: purple;

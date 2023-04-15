@@ -18,7 +18,17 @@
     padding: 5rem;
     border: 1px solid white;
     border-radius: 10px;
+   
 }
+ .alert-danger {
+     color: var(--red-dark);
+     background: var(--red-light);
+ }
+
+ .alert-success {
+     color: var(--green-dark);
+     background: var(--green-light);
+ }
 label{
     text-align: left;
     padding: 0.25rem 0;

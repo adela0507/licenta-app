@@ -9,12 +9,12 @@ function Experience(){
     return(
         <section className="section">
         <div className="">
-            <h2 className="white">Vrei sa traiesti la maxim experienta studenteasca?</h2>
+            <h2 className="white">Vrei să trăieşti la maxim experienţa studenţească?</h2>
             <br /> <br /><br /><br />
             <ul>
                 <li><a href="#Costuri">Costuri</a></li>
                 <li><a href="#Plata">Plata</a></li>
-                <li><a href="#Perioadadecazare">Perioada in care poti fi cazat</a></li>
+                <li><a href="#Perioadadecazare">Perioada în care poţi fi cazat</a></li>
                 <li><a href="#Cumpotiaplica">Cum pot aplica?</a></li>
                 <li><a href="#Diverse">Diverse</a></li>
 

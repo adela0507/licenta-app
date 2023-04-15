@@ -1,28 +1,28 @@
 import React,{ useState,useEffect } from "react";
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import "./HeroStyle.css";
-import data from './user-data';
+import rev from './user-data.js';
 
 
 
 function Review(){
-    const[camin,setCamin]=useState(data);
+    const[review,setReview]=useState(rev);
     const[index,setIndex]=useState(0);
 
 useEffect(() => {
-    const lastIndex = camin.length - 1;
+    const lastIndex = review.length - 1;
     if (index < 0) {
       setIndex(lastIndex);
     }
     if (index > lastIndex) {
       setIndex(0);
     }
-  }, [index, camin]);
+  }, [index, review]);
 
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(index + 1);
-    }, 5000);
+    }, 8000);
     return () => {
       clearInterval(slider);
     };
@@ -35,15 +35,15 @@ useEffect(() => {
             <h2> <span className="white">Reviews</span></h2>
         </div>
         <div className="section-center">
-            {camin.map((cazare,cazareIndex)=>{
-                const{id,image,image2,title,description}=cazare;
+            {review.map((reviews,reviewsIndex)=>{
+                const{id,image,title,description}=reviews;
 
                 let position='nextSlide';
-                if(cazareIndex===index)
+                if(reviewsIndex===index)
                 {
                     position='activeSlide';
                 }
-                if(cazareIndex===index-1 || index===0 && cazareIndex===camin.length-1)
+                if(reviewsIndex===index-1 || index===0 && reviewsIndex===review.length-1)
                 {
                     position='lastSlide';
                 }
@@ -56,8 +56,6 @@ useEffect(() => {
               <br />
               <h5><p className="desc">{description}</p></h5>
               <br />
-              <img className="image2" src={image2} alt={title} />
-              <br /> <br />
               </div>
             </article>
           );
@@ -67,8 +65,7 @@ useEffect(() => {
         <button className="next" onClick={() => setIndex(index + 1)}>
                   <FiChevronRight /></button>
         <br />
-        </div> <br /><br /><br />
-                <button>add a review</button>
+        </div> 
         </section>
     );
 }

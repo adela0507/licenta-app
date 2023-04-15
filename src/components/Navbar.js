@@ -1,5 +1,5 @@
 import "./NavbarStyles.css";
-import {FaHome,FaAlignRight,FaUserCircle,FaCaretDown, FaAlignLeft} from 'react-icons/fa'
+import {FaHome,FaAlignRight,FaUserCircle,FaCaretDown, FaAlignLeft,FaBars} from 'react-icons/fa'
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -8,34 +8,35 @@ import { useState } from "react";
 import {MenuItems} from '../components/MenuItems'
 
 const Navbar=()=>{
-    const{logoutUser,user}=useAppContext()
+    const{logoutUser,user,closeSidebar}=useAppContext()
     const [showLogout,setShowLogout]=useState(false)
     const navigate=useNavigate();
+    const[extendNavbar,setExtendNavbar]=useState(false);
 
     
         return<Wrapper>
 <nav className="NavbarItems">
     <h1 className="gradient">UBBFSEGA</h1>
    <div >
-    <div className="button1">
+    <div className="button1" extendNavbar={extendNavbar}>
+              <button type='button' className='close-button' ><FaBars/></button>
         <ul className={user? "nav-menu active" :"nav-menu"}>
         {MenuItems.map((item,index)=>{
             return (
                 <li key={index}><Link className={item.cName} to={item.url}>{item.icons}{item.title}</Link>
-                <button></button>
                 </li>
             );
         })}
     </ul>
-    </div>
-    <button></button>
+    </div >
+    
      <button type='button' 
-  className='btn' 
+  className='nav-links' 
   onClick={()=>setShowLogout(!showLogout)}>
-    <FaUserCircle/> {user?user.name: navigate('/login')} <FaCaretDown/>
+     {user?user.name: navigate('/login')} <FaCaretDown/>
   </button>
-  <div className={showLogout?'dropdown show-dropdown':'dropdown'}>
-    <button type='button' className='btn'
+  <div className={showLogout?'show-dropdown':'dropdown'}>
+    <button type='button' className='nav-links'
      onClick={logoutUser}>Logout
     </button>
     </div>
@@ -88,8 +89,21 @@ const Wrapper = styled.nav`
     text-transform: capitalize;
     cursor: pointer;
   }
-  
-
+.close-button{
+            display: block;
+            width: 100%;
+            font-size: 1.2rem;
+            padding: 2 rem 0;
+            @media (min-width: 850px){
+              display: none;
+            }
+        }
+.close-button:hover{
+            background-color: purple;
+            color: white;
+            transition:none;
+        }
+    
 `
 
 export default Navbar;

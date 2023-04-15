@@ -1,7 +1,7 @@
 import React,{useReducer,useContext,useState} from "react";
 import reducer from "./reducer";
 import axios from 'axios'
-import { LOGOUT_USER,DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
+import { LOGOUT_USER,SIDEBAR_CLOSE,SIDEBAR_OPEN, DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
 
 const token=localStorage.getItem('token')
 const user=localStorage.getItem('user')
@@ -20,7 +20,12 @@ const AppContext= React.createContext();
 
 const AppProvider=({children})=>{
     const[state,dispatch]=useReducer(reducer,initialState)
-
+const openSidebar=()=>{
+    dispatch({type:SIDEBAR_OPEN})
+  }
+  const closeSidebar=()=>{
+    dispatch({type:SIDEBAR_CLOSE})
+  }
 const displayAlert=()=>{
     dispatch({type:DISPLAY_ALERT})
     clearAlert()
@@ -79,7 +84,7 @@ removeUserFromLocalStorage()
 
     return(
 <AppContext.Provider value={{...state,displayAlert,
-registerUser,loginUser,logoutUser}}>
+registerUser,loginUser,logoutUser,openSidebar,closeSidebar}}>
     {children}
 </AppContext.Provider>
 );

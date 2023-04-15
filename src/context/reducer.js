@@ -1,8 +1,16 @@
 import React from 'react'
-import { LOGOUT_USER,DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
+import { LOGOUT_USER,SIDEBAR_CLOSE,SIDEBAR_OPEN, DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
 import { initialState } from './appContext';
 
 const reducer = (state,action) => {
+    if(action.type===SIDEBAR_OPEN)
+  {
+    return{...state,isSidebarOpen:true}
+  }
+  if(action.type===SIDEBAR_CLOSE)
+  {
+    return{...state,isSidebarOpen:false}
+  }
   if(action.type===DISPLAY_ALERT)
     {
         return {...state,
