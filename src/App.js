@@ -27,12 +27,19 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/camine" element={<Camine/>}/>
         { <Route path="/camine/:id" element={<SingleCaminPage/>}/> }
-        <Route path="/status" element={<Status/>}/>
-        <Route path="/contract" element={<Contract/>}/>
+        <Route path="/status" element={<ProtectedRoute user={user}>
+          <Status user={user}/>
+          </ProtectedRoute>}/>
+        <Route path="/contract" element={
+        <ProtectedRoute user={user}>
+          <Contract user={user}/>
+          </ProtectedRoute>}/>
         <Route path="/login" element={
         <Login setUser={setUser}/>}/>
         <Route path="/cereri" element={
-          <Cereri />}
+        <ProtectedRoute user={user}>
+          <Cereri user={user}/>
+          </ProtectedRoute>}
         />
         <Route path="/register" element={<Register/>}/>
         <Route path="/*" element={<Error/>}/>

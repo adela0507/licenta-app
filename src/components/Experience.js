@@ -21,37 +21,45 @@ function Experience(){
             </ul>
             <br /><br /><br /><br />
             <section className="left">
-                <h3 id="Costuri">Costurile pe care le ai de platit pentru a putea fi cazat</h3>
-                <p>Trebuie platit doar regia, utilitatile fiind incluse in aceastea.</p>
+                <h3 id="Costuri">Costurile pe care le ai de plătit </h3>
+                <p>Trebuie plătită doar regia (variază în funcţie de căminul în care vei fi cazat), utilităţile fiind incluse în aceastea.</p>
                 <br />
             </section>
             <section className="right">
                 <h3 id="Plata">Plata se va face lunar, fizic sau online.</h3>
-                <p>plata fizica poate fi realizata cash sau card, cea online prin transfer bancar si trimiterea dovezii catre administratoarea caminului de carea partii</p>
+                <p>Plata fizică poate fi realizată cash sau card,la administraţia căminului de care aparţii.
+                    <br /> Plata online, prin transfer bancar trebuie să conţină şi trimiterea dovezii către administratoarea căminului de carea aparţii. 
+                    <br /> Aceasta se face odată pe lună, de obicei fiind realizată înainte de data de 28 a lunii respective. </p>
                 <br />
             </section>
             <section className="left">
-                <h3 id="Perioadadecazare">Perioada in care poti depune actele</h3>
-                <p>Inainte de inceputul anului universitar,vor fi 4 zile in care iti vei utea depune online cererile, cei care 
-                    vor primi un loc intr-un dintre caminele de care dispunem vor avea 3zile la dispozitie pentru a veni si a-si face cazarea propriu zisa cazurile sociale vor beneficia de camin si dupa aceasta perioada.</p>
+                <h3 id="Perioadadecazare">Perioada în care îţi poţi depune actele.</h3>
+                <p>Înainte de începutul anului universitar, vor fi 4 zile în care îţi vei putea depune online cererea, cei care 
+                    vor primi un loc într-unul dintre căminele de care dispunem vor avea 3 zile la dispoziţie pentru a-şi completa şi încărca  <Link to='/contract' className="special-text-home">contractul</Link> pe site-ul nostru.
+                    <br /> Apoi vor veni să-şi facă cazarea propriu zisă(îşi vor primii legitimaţia,cheile, aşternuturi dacă este necasr şi îşi vor putea aduce lucrurile de care au nevoie) cazurile sociale vor beneficia de cămin şi după această perioadă.</p>
                 <br />
             </section>
             <section className="right">
                 <h3 id="Cumpotiaplica">Cum pot aplica?</h3>
-                <p>Este foarte simple! In primul rand trebuie sa fii student al facultatii noastre. Ai nevoie sa de un cont pe platforma noastra. Apoi poti completa cererea atasata. Aceatsa va fi urmata de asteptarea raspunsului care va aparea in sectiunea STATUS</p>
+                <p>Este foarte simplu! În primul rând trebuie să fii student al facultăţii noastre. <br />
+                 Ai nevoie de un cont pe platforma noastra.
+                 <br /> Apoi poţi completa <Link to='/cereri' className="special-text-home">cererea</Link>. Aceatsa va fi urmata de aşteptarea răspunsului care va apărea în secţiunea <Link to='/status' className="special-text-home">STATUS</Link>. </p>
                 <br />
             </section>
              <section className="left">
                                         <img className="photo-right" src={img1} alt="" />
-                <h3 id="Diverse">Te-am facut curios?</h3>
-                <p>In cadrul complexului Hadeu vei beneficia si de mancare calda oferita de cantina acesteia. Vei in apropiere si o sala de sport la care poti merge facandu-ti programare pe gratis. <br />
-                Vei avea acces si la 2 spalatorii, fiind repartizat la una din acestea depinzand de caminul din care apartii. <br />
-                Ora pana la care e permis sa ai vizite este 23:00, insa nu ai ora de intrat in camin.</p>
+                <h3 id="Diverse">Te-am făcut curios?</h3>
+                <p>În cadrul complexului Haşdeu vei beneficia şi de mese calde, oferite de cantina acesteia. <br /> 
+              Studenții beneficiază de acces gratuit la internet și săli de lectură. <br />
+              În campusuri există posibilitatea ca beneficiarii de cazare să solicite contracost un loc de parcare a autovehiculului. <br />
+              În incinta Căminelor 14 Hașdeu, 16 Hașdeu şi Economica II  există spălătorii amenajate unde studenții îți pot duce rufele contracost conform unei programări pe site-ul Calendis. <br />
+              La subsolul Căminului 16 Hașdeu studenții pot folosi spațiile destinate activităților de divertisment și aparatura din sălile de fitness(se face pe baya programării). <br />
+              În apropierea Căminului 2 Hașdeu s-a amenajat un teatru de vară în care studenții pot organiza diferite activități.</p>
                 <br />
             </section>
 
 <br /><br />
-            <h5 >  Ce mai astepti? Completeaza acum <Link to='/cereri'>cererea</Link> pentru a beneficia de un loc intr-unul dintre camine.</h5>
+            <h5 className="white">  Ce mai aştepţi? Completează acum <Link to='/cereri' className="special-text-home">cererea</Link> pentru a beneficia de un loc într-unul dintre cămine.</h5>
 
         </div>
         </section>

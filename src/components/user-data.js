@@ -22,13 +22,13 @@ const rev=[
         id:4,
         image:'https://scontent.fsbz3-1.fna.fbcdn.net/v/t39.30808-6/314414685_946229493014484_2786944778897829222_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=KSp8AhB-hZcAX9yrzmy&_nc_ht=scontent.fsbz3-1.fna&oh=00_AfAGrufsElpRloxvsinx0e8zSFSMwHvfSv3BeLXjlaBVuw&oe=643E104A',
         title:'Ştefănuţ Cătălin',
-        description:'',
+        description:'Pentru mine, viața la cămin este ca şi cum ai merge într-o aventură în fiecare zi. De la începutul anului acesta școlar, când am depus cererea pentru cămin, nu știam la ce să ma aştept, doar la faptul că speram că o să prind un loc. În cele din urmă, am nimerit în faimosul Cămin 16,  Într-o cameră cu alte 4 suflete lângă mine, unde nu știi niciodată ce te așteaptă ziua următoare sau la ce oră își vor pune colegii alarma să se trezească de dimineață. Primele zile au fost mai dificile până ne-am obișnuit cu fiecare, să ne învățăm obiceiurile și cum am putea să facem să ne înțelegem cât mai bine, din moment ce suntem prinși în acea cameră pentru acest an școlar. Dar, cu toate diferențele noastre, consider că ne înțelegem destul de bine și am învățat să conviețuim. Cred că o să îmi lipsească trezitul de la 6 jumătate al colegilor care mearg la facultate, iar eu încercând să mai răpesc puțin somn. Dar fiecare lucru în viața are drumul lui și consider pasul ăsta unul destul important în viața noastră, că toată această camaraderie o să ia sfârșit la momentul începerii vacantei de vara! ',
     },
     {
         id:5,
         image:'https://scontent.fsbz3-1.fna.fbcdn.net/v/t1.6435-9/70512587_2623633314396972_771860864960561152_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=dPbmFd53vk0AX8-QFXG&_nc_ht=scontent.fsbz3-1.fna&oh=00_AfA5o9FMhRJRcbuof0iIe3RrDWn0evonSnCLxUs8oHA3CQ&oe=645FD2B2',
         title:'Moţ Denis',
-        description:'',
+        description:'Locuind în căminul 14 Hașdeu de aproape 2 ani pot spune că m-am acomodat foarte bine. M-am acomodat foarte bine în acest cămin, la început mi-a fost puțin greu deoarece nu cunoșteam pe nimeni în acest loc, dar cu ajutorul colegului de cameră, am reușit să mă acomodez cu viața de cămin. Pentru mine viața de cămin este foarte frumoasă, căminul 14 devenind a doua mea casă, fiind foarte mulțumit mai ales de confortul oferit. Mă bucur ca am ales sa îmi trăiesc anii de facultate în cămin.',
     },
     {
         id:6,

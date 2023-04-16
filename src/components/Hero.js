@@ -11,7 +11,7 @@ function Hero(){
         <img src={img1} alt="" className="photo-right1"/> <br /><br /> <br />
    <div className="content1">
     <h3>Căminul, <i>casa</i> ta pentru următorul an universitar!</h3>
-    <p className="text-home">Pentru mai multe informaţii ţi-am pus la dispoziţie o pagina destinată curiozităţilor pe care majoritatea studenţiilor le au despre cum e viaţa petrecută în cămin, <Link to='/about' className="special-text-home">ai detali aici</Link>! <br /> Dacă eşti curios şi doreşti să explorezi căminele în care ai putea locui <Link  to='/camine' className="special-text-home">apasa aici</Link>!</p>
+    <p className="text-home">Pentru mai multe <Link to='/about' className="special-text-home">informaţii</Link> ţi-am pus la dispoziţie o pagină destinată curiozităţilor pe care majoritatea studenţilor le au despre cum e viaţa petrecută în cămin! <br /> Dacă ţi-am stârnit curiozitatea <Link  to='/camine' className="special-text-home">explorează</Link> acum căminele în care vei putea locui!</p>
      <br />
    </div>
         <button className="button-home"><Link to='/cereri' className="button-text">Completează acum cererea!</Link></button> 

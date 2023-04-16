@@ -18,9 +18,10 @@ const Navbar=()=>{
 <nav className="NavbarItems">
     <h1 className="gradient">UBBFSEGA</h1>
    <div >
-    <div className="button1" extendNavbar={extendNavbar}>
-              <button type='button' className='close-button' ><FaBars/></button>
-        <ul className={user? "nav-menu active" :"nav-menu"}>
+    <div className="button1" >
+ <button type='button' className='close-button' onClick={()=>{setExtendNavbar((curr)=>!curr)
+      ;}} ><FaBars/></button>       
+       <ul className={extendNavbar? "nav-menu active" :"nav-menu"}>
         {MenuItems.map((item,index)=>{
             return (
                 <li key={index}><Link className={item.cName} to={item.url}>{item.icons}{item.title}</Link>
@@ -32,12 +33,12 @@ const Navbar=()=>{
     
      <button type='button' 
   className='nav-links' 
-  onClick={()=>setShowLogout(!showLogout)}>
-     {user?user.name: navigate('/login')} <FaCaretDown/>
+  onClick={()=>setShowLogout(!showLogout)}> 
+     {user?user.name: navigate('/login')}<FaCaretDown/>
   </button>
   <div className={showLogout?'show-dropdown':'dropdown'}>
     <button type='button' className='nav-links'
-     onClick={logoutUser}>Logout
+     onClick={logoutUser}>Deconectare
     </button>
     </div>
    </div>

@@ -1,7 +1,20 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../context/appContext";
 
 function Contract(){
+    //     const{user,login}=useAppContext()
+    //     const navigate=useNavigate();
+
+    // if(!user){
+    //     navigate('/login');
+    // }
+    // else{
+    //     navigate('/contract');
+    // }
+
 return(
     <div>
     <Navbar/>
@@ -94,6 +107,8 @@ Fiecare locatar are îndatorirea să-și desfășoare activitatea în așa fel �
 
 </p>
 </div>
+            <button type="submit" ><Link to='/status' className="button-text">Trimite</Link></button>
+
 
             </form>
             
