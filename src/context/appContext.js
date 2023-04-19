@@ -1,7 +1,11 @@
 import React,{useReducer,useContext,useState} from "react";
 import reducer from "./reducer";
 import axios from 'axios'
-import { LOGOUT_USER,SIDEBAR_CLOSE,SIDEBAR_OPEN, DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
+import { LOGOUT_USER,HANDLE_CHANGE,
+    CREATE_CERERE_BEGIN,
+    CREATE_CERERE_ERROR,
+    CREATE_CERERE_SUCCESS,
+    SIDEBAR_CLOSE,SIDEBAR_OPEN, DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
 
 const token=localStorage.getItem('token')
 const user=localStorage.getItem('user')
@@ -13,6 +17,16 @@ const initialState={
     alertText:'',
     token:token,
     user:user? JSON.parse(user):null,
+    name:'',
+    email:'',
+    lastName:'',
+    address:'',
+    tel:'',
+    studyYear:'',
+    situationOption:['Buget','Taxa'],
+    situation:'Buget',
+    grade:'',
+    date:'',
 
 }
 
@@ -81,10 +95,31 @@ const logoutUser=()=>{
 dispatch({type:LOGOUT_USER})
 removeUserFromLocalStorage()
 }
+const cerers=async()=>{
+            dispatch({type:CREATE_CERERE_BEGIN})
+
+    try {
+        const{name,lastName,email,tel,grade,
+        studyYear,address}=state
+        const response=await axios.post('/api/v1/cerers',{
+            name,lastName,tel,grade,email,studyYear,address
+        })
+        dispatch({type:CREATE_CERERE_SUCCESS})
+        } catch (error) {
+            if(error.response.status){
+                dispatch({type:CREATE_CERERE_ERROR,
+                payload:{msg:error.response.data.msg},})
+            }
+        clearAlert()
+    }
+}
+const handleChange=({name,value})=>{
+    dispatch({type:HANDLE_CHANGE,payload:{name,value}})
+}
 
     return(
 <AppContext.Provider value={{...state,displayAlert,
-registerUser,loginUser,logoutUser,openSidebar,closeSidebar}}>
+registerUser,loginUser,logoutUser,openSidebar,closeSidebar,handleChange,cerers}}>
     {children}
 </AppContext.Provider>
 );

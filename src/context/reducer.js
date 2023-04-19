@@ -1,5 +1,10 @@
 import React from 'react'
-import { LOGOUT_USER,SIDEBAR_CLOSE,SIDEBAR_OPEN, DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
+import { LOGOUT_USER,
+    CREATE_CERERE_BEGIN,
+    CREATE_CERERE_ERROR,
+    HANDLE_CHANGE,
+    CREATE_CERERE_SUCCESS,
+    SIDEBAR_CLOSE,SIDEBAR_OPEN, DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
 import { initialState } from './appContext';
 
 const reducer = (state,action) => {
@@ -87,6 +92,40 @@ const reducer = (state,action) => {
             user:null,
             token:null,
             
+        }
+    }
+    if(action.type===HANDLE_CHANGE)
+    {
+        return{
+            ...state,
+            [action.payload.name]:action.payload.value,
+        }
+    }
+    if(action.type===CREATE_CERERE_BEGIN)
+    {
+        return{
+            ...state,
+            
+        }
+    }
+    if(action.type===CREATE_CERERE_SUCCESS)
+    {
+        return{
+            ...state,
+            isLoading:false,
+            showAlert:true,
+            alertType:'success',
+            alertText:'CERERE CREATA',
+        }
+    }
+    if(action.type===CREATE_CERERE_ERROR)
+    {
+        return{
+            ...state,
+            isLoading:false,
+            showAlert:true,
+            alertType:'danger',
+            alertText:action.payload.msg,
         }
     }
       throw new Error(`no such action:${action.type}`)
