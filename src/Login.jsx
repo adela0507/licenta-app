@@ -56,14 +56,7 @@ if(user){
         <div className="alert-danger">
         {showAlert && <Alert/>}
         </div>
-         <label htmlFor='name' >
-            Nume
-          </label>
-          <br />
-          <input value={value.name} 
-        onChange={handleChange} 
-        type="text" placeholder='name' name="name" id="name" />
-        
+         
           <br />
         <label htmlFor="email">Email</label>
         <br/>
