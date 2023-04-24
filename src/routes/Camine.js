@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import React,{ useState,useEffect } from "react";
 import data from '../components/data';
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 
 
@@ -31,13 +32,14 @@ return(
         </p>
 
                     <p>{cazare.description2}</p>
-                    <br /><br />
+                    <br />
                    </div>
                 );
             })}
                </div>
-        <br />
+      
         </div>
+        <button className='btn'><Link to='/about'>Doreşti mai multe informaţii despre cămin/viaţa la cămin?</Link></button> <br /> <br /> <br />
    <Footer/>
 </Wrapper>
 

@@ -184,7 +184,25 @@ e-mail
             placeholder="emailul tau"
              onChange={handleContractInput}
 /> 
-chirias. 
+chirias.  <br />  <br />
+1.2.1 Categoria studentului cazat în funcţie de subvenţia de cămin <br />
+a. Student român(nivel de licenţă,master) <br />
+b. Student român(nivel de licenţă,master) copil de cadru didactic sau 
+cadru didactic auxiliar aflat în activitate sau pensionat din sistemul de învăţământ <br />
+c. Student român orfan de unul sau ambii părinţi, student provenit din casele de copii sau plasament familial, student bursier CEEPUS <br />
+d. Student al Uniunii Europene, Spaţiul Economic European şi Confederaţia Elveţiană <br />
+e. Student străin bursier al statului român, student străin cu acorduri interruniversitare, interguvernamentale <br />
+f. Student străin bursier, fără bursă, student străin cu acorduri interruniversitare,
+interguvernamentale pe care universitatea are obligaţia să-l cazeze în aceleaşi condiţii ca şi pe studenţii români <br />
+g. Student străin de origine etnică română, student cetăţean român cu domiciliul în străinătate <br />
+h. Student străin în baza acordurilor interuniversitare, interdepartamentale,programe mobilităţi (Erasmus, Atlantis, Tempus, DAAD, Fullbright etc.) <br />
+i. Student străin necomunitar, student străin pe cont propriu valutar, alte forme de pregătire universitară, alte categorii de persoane <br /> 
+j. Student cu dizabilităţi
+<br /> <br />
+<strong> Art. 2. Obiectivul Contractului</strong> <br />
+<p>2.1 Obiectul contractului îl constituie închirierea, pe parcursul anului universitar, a unui loc în căminul <input type="number" name="" id="" />,situat la adresa Cluj Napoca, str. <input type="text" />, nr. <input type="number" name="" id="" />, a instalaţiilor şi spaţiilor 
+comune aferente, a bunurilor înregistrate în inventar, proprietate a Universităţii Babeş-Bolyai, conform procesului-verbal de predare-primire întocmit la cazare şi a celorlalte anexe ale prezentului
+contract. Pentru eficientizarea spaţiilor de cazare în timpul anului universitar, chiriaşul poate fi mutat în altă cameră a aceluiaşi cămin. </p>
 <br /> <br />
 <p> <strong>Art. 3. TERMENUL CONTRACTULUI </strong> <br />
 3.1. Termenul de închiriere este de la <input value={dateContract} name="dateContract" type="date" onChange={handleContractInput} />  până la <input value={dateContract} name="dateContract" type="date" onChange={handleContractInput} /> conform structurii anului universitar.

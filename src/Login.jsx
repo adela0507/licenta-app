@@ -14,8 +14,12 @@ export const Login=()=>{
     const navigate=useNavigate();
     const [value,setValue]=useState(initialState);
     const {showAlert,displayAlert,user,loginUser}=useAppContext();
+    const [show,setShow]=useState(false)
+    const handleShow=()=>{
+      setShow(!show)
+    }
 
-;
+
     
 
     const handleSubmit=async(e)=>{
@@ -51,7 +55,7 @@ if(user){
     return (
         
         <div className="auth-form-container">
-            <h2>Login</h2>
+            <h2>Conectare</h2>
        <form action="POST" onSubmit={handleSubmit}>
         <div className="alert-danger">
         {showAlert && <Alert/>}
@@ -67,16 +71,17 @@ if(user){
         id="email" 
         name="email" />
         <br/>
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Parolă</label>
         <br/>
         <input value={value.password} 
-        onChange={handleChange} type="password" placeholder="*******" name="password" id="password" />
+        onChange={handleChange} type={show?"text":"password"} placeholder="*******" name="password" id="password" /> 
+        <button className="btn" onClick={handleShow}>Show</button>
         <br/>
-        <button type="submit" >Login</button>
+        <button  type="submit" >Conectează-te!</button>
        </form>
                
        <br/>
-       <button className="link-btn" onClick={()=>navigate('/register')}>Don't have an account? Register here</button>
+       <button className="link-btn" onClick={()=>navigate('/register')}>Nu ai încă un cont? Înregistrează-te acum!</button>
        </div>
     );
 };

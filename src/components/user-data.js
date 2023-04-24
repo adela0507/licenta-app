@@ -32,9 +32,9 @@ const rev=[
     },
     {
         id:6,
-        image:'https://scontent.fsbz3-1.fna.fbcdn.net/v/t1.6435-9/189627235_1757480134423871_505241444385685646_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2D0axyffc2sAX8zFpUH&_nc_ht=scontent.fsbz3-1.fna&oh=00_AfCLdWXqrhvsUxeIumMYqWbiEkhj4Wmo_T7xYxCkO2HUww&oe=645FD259',
-        title:'Hiticaş Adrian',
-        description:'',
+        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/339657113_3149018358736488_1554025947824059623_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0_V1u1ABFuQAX95Xp67&_nc_ht=scontent.fclj3-1.fna&oh=00_AfC0ofXyWALix-yu5JKBVBmagvP_Y97rNN9n5D6ueYMUjw&oe=6449BF63',
+        title:'Miclea Adela',
+        description:'Locuind în căminul Economica 1, pe timpul verii am reuşit să gust din cum e adevărata viaţă de cămin. În cameră am fost repartizată alături de 2 prietene, având 2 băi în camera noastră(mai mult decât ţi-ai putea dorii de la viaţa petrecită într-un cămin). Am reuşit să mă acomodez uşor, fiind la o distanţă foarte mică de FSEGA şi Iulius Mall. ',
     },
     
 ];

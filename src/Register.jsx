@@ -16,6 +16,10 @@ export const Register=()=>{
     const navigate=useNavigate();
     const [value,setValue]=useState(initialState);
     const {showAlert,displayAlert,registerUser,user}=useAppContext();
+    const [show,setShow]=useState(false)
+    const handleShow=()=>{
+        setShow(!show)
+    }
 //     const toggleMember=()=>{
 //     setValue({...value, isMember: !value.isMember})
 //   }
@@ -54,10 +58,10 @@ if(user){
 
     return (
     <div className="auth-form-container">
-                <h2>Register</h2>
+                <h2>Înregistrare</h2>
        <form action="POST" onSubmit={handleSubmit}>
         {showAlert &&<Alert/>}
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Nume</label>
         <br/>
         <input value={value.name} 
         onChange={handleChange} 
@@ -69,17 +73,19 @@ if(user){
         onChange={handleChange} 
          type="email" placeholder="youremail@gmail.com" id="email" name="email" />
         <br/>
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Parolă</label>
         <br/>
         <input value={value.password} 
         onChange={handleChange} 
-        type="password" placeholder="*******" name="password" id="password" />
+        type={show?"text":"password"} placeholder="*******" name="password" id="password" />
+        <button className="btn" onClick={handleShow}>Show</button>
+
         <br/>
         <br/>
-        <button type="submit" >Register</button>
+        <button type="submit" >Trimite înregistrarea</button>
        </form>
        <br/>
-       <button className="link-btn"  onClick={()=>navigate('/login')}>Already have an account? Log In here</button>
+       <button className="link-btn"  onClick={()=>navigate('/login')}>Ai deja un cont? Conectează-te acum!</button>
     </div>  
  
         );
