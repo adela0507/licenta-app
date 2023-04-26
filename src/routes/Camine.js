@@ -1,6 +1,6 @@
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import React,{ useState,useEffect } from "react";
+import React,{ useState } from "react";
 import data from '../components/data';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
@@ -24,12 +24,13 @@ return(
                     <br />
                     <br />
                    <img src={cazare.image}  />
-                     <p>
+                   <p>{cazare.description}</p>
+                     {/* <p>
           {readMore ? cazare.description: `${cazare.description.substring(0, 80)}... `}
           <button onClick={() => setReadMore(!readMore)}>
             {readMore ? 'arată mai puţin' : '  arată mai mult'}
           </button>
-        </p>
+        </p> */}
 
                     <p>{cazare.description2}</p>
                     <br />

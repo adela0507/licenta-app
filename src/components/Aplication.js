@@ -5,17 +5,25 @@ import { Link, useNavigate } from "react-router-dom";
 import ImageUpload from "./ImageUpload";
 import { useAppContext } from "../context/appContext";
 import Alert from '../components/Alert'
-
+import FormRowSelect from "./FormSelectRow";
 
 
  const Aplication=()=>{
         const navigate=useNavigate()
     const{name,showAlert,
-    displayAlert,lastName,email,
-    grade,tel,address,studyYear
-    ,situation,handleChange,
+    displayAlert,
+    lastName,
+    email,
+    grade,
+    tel,
+    address,
+    studyYear,
+    situation,
+    situationOption,
+    situation1,situation2,
+    handleChange,
     cerers,
-    date,
+    date,sign,
     alertType,}=useAppContext()
 
 useEffect(()=>{
@@ -27,7 +35,7 @@ useEffect(()=>{
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        if(!name || !lastName || !email || !address || !tel || !studyYear || !grade ){
+        if(!name || !lastName || !email || !address || !tel || !studyYear || !grade || !sign ){
             displayAlert();
             return;
         }
@@ -99,6 +107,13 @@ AN UNIVERSITAR 2023-2024</p>
         name="grade"
         onChange={handleCerereInput} />
         <br />
+        <label htmlFor="situation">Buget sau taxă?</label>
+<input value={situation} 
+        type="text" 
+        placeholder="Taxă sau buget" 
+        name="situation"
+        onChange={handleCerereInput} />
+        <br />
 
             </p>
             <p className="cerere">*toate informațiile sunt obligatorii </p>
@@ -106,17 +121,26 @@ AN UNIVERSITAR 2023-2024</p>
             <p className="cerere">Declaratie: Subsemnatul/a vă rog să aprobați acordarea unui loc în căminele sudențesti în anul universitar 2023-2024.
             Declar pe proprie răspundere că datele prezentate în cerere sunt reale și complete. Declar că am luat cunostință de prevederile
             Regulamentului privind acordarea de locuri în căminele studențești pentru studenții din Universitatea Babeș-Bolyai. 
-            </p>  br
+            </p>  
             <label htmlFor="date">Data completării:</label>
 <input value={date} type="date" name="date" onChange={handleCerereInput}/>
-
+<br />
+<div className="btn"> 
+<label htmlFor="sign">Semnătură</label>
+        <br/>
+        <input value={sign} 
+        type="text" 
+        name="sign"
+        placeholder="nume şi prenume"
+        onChange={handleCerereInput} />
+        <br /> </div>
             <br />             {showAlert && <Alert/>}
 <br /> 
              <button type="submit" 
              onClick={handleSubmit}>Trimite</button>
 
-            <h4>Semnatura</h4>
-<ImageUpload/> <br />
+            {/* <h4>Semnatura</h4>
+<ImageUpload/> <br /> */}
         </form>
             <button ><Link to='/contract' className="button-text">Ai fost deja acceptat/ă?</Link></button> <br /> <br /> 
 

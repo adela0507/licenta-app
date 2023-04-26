@@ -14,13 +14,11 @@ export const Login=()=>{
     const navigate=useNavigate();
     const [value,setValue]=useState(initialState);
     const {showAlert,displayAlert,user,loginUser}=useAppContext();
-    const [show,setShow]=useState(false)
+    const [show,setShow]=useState(false);
+
     const handleShow=()=>{
       setShow(!show)
     }
-
-
-    
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
@@ -37,12 +35,12 @@ export const Login=()=>{
     else{
         navigate('/register');
     }
-    
     }
 
     const handleChange=(e)=>{
       setValue({...value, [e.target.name]: e.target.value})
     };
+
     useEffect(()=>{
 if(user){
     setTimeout(()=>{

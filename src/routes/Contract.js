@@ -21,6 +21,12 @@ function Contract(){
         telContract,
         emailContract,
         taxe,
+        dateF,
+        dateI,
+        dateId,
+        signContract,
+        caminNumber,
+        caminAddress,
         contracts,
         displayAlert,
         handleChange,
@@ -31,7 +37,7 @@ function Contract(){
     useEffect(()=>{
         if(alertType ==='success'){
         setTimeout(()=>{
-                navigate('/status')
+                navigate('/statusContract')
         },3000)
 }},[alertType,navigate]);
 
@@ -39,8 +45,10 @@ const handleSubmit=(e)=>{
     e.preventDefault();
     if( !nameContract || !dadName || !momName || !school
     || !studyYearContract || !addressContract || !ci
-    || !numberCI || !ciAddress  || !cnpContract || !telContract
-     || !emailContract || !taxe ){
+    || !numberCI || !ciAddress  || !cnpContract 
+    || !signContract || !dateI || !dateF
+     || !telContract || !caminAddress || !caminNumber
+     || !emailContract || !taxe  || !dateContract){
         displayAlert();
         return;
      }
@@ -121,14 +129,7 @@ return(
              placeholder="adresa completa,jub,oras,str,nr" 
              onChange={handleContractInput}
 /> 
-  {/* str. <label htmlFor="name"></label>
-                <input type="text" placeholder="strada" /> 
- ,
-<label htmlFor="name"></label>
-                <input type="text" placeholder="adresa ta" /> 
-  judeţul <label htmlFor="name"></label>
-                <input type="text" placeholder="judetul din care esti" />  */}
-  , posesor al BI/CI seria
+ , posesor al BI/CI seria
             <label htmlFor="ci"></label>
             <input value={ci}
             type="text"
@@ -200,12 +201,12 @@ i. Student străin necomunitar, student străin pe cont propriu valutar, alte fo
 j. Student cu dizabilităţi
 <br /> <br />
 <strong> Art. 2. Obiectivul Contractului</strong> <br />
-<p>2.1 Obiectul contractului îl constituie închirierea, pe parcursul anului universitar, a unui loc în căminul <input type="number" name="" id="" />,situat la adresa Cluj Napoca, str. <input type="text" />, nr. <input type="number" name="" id="" />, a instalaţiilor şi spaţiilor 
+<p>2.1 Obiectul contractului îl constituie închirierea, pe parcursul anului universitar, a unui loc în căminul <input type="text" name="caminNumber" id="caminNumber" placeholder="in ce camin ai fost repartizta?" value={caminNumber} onChange={handleContractInput}/>,situat la adresa Cluj Napoca, str. <input type="text" placeholder="adresa completa" name="caminAddress" value={caminAddress} onChange={handleContractInput}/>, a instalaţiilor şi spaţiilor 
 comune aferente, a bunurilor înregistrate în inventar, proprietate a Universităţii Babeş-Bolyai, conform procesului-verbal de predare-primire întocmit la cazare şi a celorlalte anexe ale prezentului
 contract. Pentru eficientizarea spaţiilor de cazare în timpul anului universitar, chiriaşul poate fi mutat în altă cameră a aceluiaşi cămin. </p>
 <br /> <br />
 <p> <strong>Art. 3. TERMENUL CONTRACTULUI </strong> <br />
-3.1. Termenul de închiriere este de la <input value={dateContract} name="dateContract" type="date" onChange={handleContractInput} />  până la <input value={dateContract} name="dateContract" type="date" onChange={handleContractInput} /> conform structurii anului universitar.
+3.1. Termenul de închiriere este de la <input value={dateI} name="dateI" type="date" onChange={handleContractInput} />  până la <input value={dateF} name="dateF" type="date" onChange={handleContractInput} /> conform structurii anului universitar.
 
 <br /> <br />
 
@@ -336,9 +337,9 @@ cazare în căminele studențești aprobat de Senatul Universității Babeș- Bo
 Babeș-Bolyai referitoare la taxele și tarifele de închiriere, Ordonanță nr. 97/2005 privind evidență, domiciliul, 
 reședința și actele de identitate ale cetățenilor români, Legea nr. 349/2002 pentru prevenirea și combaterea efectelor 
 consumului produselor din tutu, Legea 448/2006 privind protecția și promovarea drepturilor persoanelor cu handicap, Legea nr. 307/2006 privind apărarea împotriva incendiilor.
-Încheiat în 2 (două) exemplare, câte unui pentru fiecare parte, azi, <input value={dateContract} name="dateContract" type="date" onChange={handleContractInput}/>.
+Încheiat în 2 (două) exemplare, câte unui pentru fiecare parte, azi, <input value={dateI} name="dateI" type="date" onChange={handleContractInput}/>.
 <br />
-CHIRIAS,
+
 
 </p>
 </p> <br /> <br /> 
@@ -368,7 +369,15 @@ Fiecare locatar are îndatorirea să-și desfășoare activitatea în așa fel �
 19. să fie atenți la ieșirea din cadă de dus sau cabina de dus, să nu alunece. <br /> </strong>
 
 Chirias, <br />
-Nume si prenume:
+<div className="btn"> 
+<label htmlFor="signContract">Semnătură</label>
+        <br/>
+        <input value={signContract} 
+        type="text" 
+        name="signContract"
+        placeholder="nume şi prenume"
+        onChange={handleContractInput} />
+        <br /> </div>
 </p>
 </div> 
                 {showAlert && <Alert/>} <br />

@@ -2,19 +2,10 @@ import React, {useState} from "react";
 import { Register } from "./Register";
 import  {Login}  from "./Login";
 import './App.css';
-import styled from 'styled-components'
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
 import{Route,Routes} from "react-router-dom";
-// import Home from "./routes/Home";
-// import About from "./routes/About";
-// import Contact from "./routes/Contact";
-// import Status from "./routes/Status";
- import SingleCaminPage from "./routes/SingleCaminPage";
 import ProtectedRoute from "./routes/ProtectedRoute";
-import {Home,About,Cereri,Contact,Error,Status,Camine}from './routes';
-import SingleCamin from './components/SingleCamin';
-import Contract from "./routes/Contract";
+import {Home,About,Cereri,Error,Status,Camine,Contract,StatusContract}from './routes';
+
 
 
 function App() {
@@ -26,9 +17,12 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/camine" element={<Camine/>}/>
-        { <Route path="/camine/:id" element={<SingleCaminPage/>}/> }
+        {/* { <Route path="/camine/:id" element={<SingleCaminPage/>}/> } */}
         <Route path="/status" element={<ProtectedRoute user={user}>
           <Status user={user}/>
+          </ProtectedRoute>}/>
+          <Route path="/statusContract" element={<ProtectedRoute user={user}>
+          <StatusContract user={user}/>
           </ProtectedRoute>}/>
         <Route path="/contract" element={
         <ProtectedRoute user={user}>
@@ -46,19 +40,6 @@ function App() {
       </Routes>
     </div>
   );
-/*  const [currentForm,setCurrentForm]=useState('login');
-  const toggleForm=(formName)=>{
-    setCurrentForm(formName);
-  }
-  return (
-    <div className="App">
-      {
-        currentForm === "login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
-
-      }      
-    </div>
-  );
-  */
 }
 
 export default App;

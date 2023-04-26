@@ -34,11 +34,17 @@ const initialState={
     lastName:'',
     address:'',
     tel:'',
+    sign:'',
     studyYear:'',
-    situationOption:['Buget','Taxa'],
-    situation:'Buget',
+    situation:'',
     grade:'',
     date:'',
+    signContract:'',
+        dateI:'',
+        dateF:'',
+        dateId:'',
+        caminNumber:'',
+        caminAddress:'',
     nameContract:'',
         dadName:'',
         momName:'',
@@ -126,9 +132,9 @@ const cerers=async()=>{
 
     try {
         const{name,lastName,email,tel,grade,
-        studyYear,address,date}=state
+        studyYear,address,date,sign,situation}=state
         const response=await axios.post('/api/v1/cerers',{
-            name,lastName,tel,grade,email,studyYear,address,date,
+            name,lastName,tel,grade,email,studyYear,address,date,sign,situation,
         })
         dispatch({type:CREATE_CERERE_SUCCESS})
         } catch (error) {
@@ -157,7 +163,11 @@ const contracts=async()=>{
         telContract,
         emailContract,
         taxe,
-        sign,
+        signContract,
+        dateI,
+        dateF,
+        caminNumber,
+        caminAddress,
         }=state
         const response=await axios.post('/api/v1/contracts',{
             nameContract,
@@ -174,6 +184,12 @@ const contracts=async()=>{
         telContract,
         emailContract,
         taxe,
+        signContract,
+        dateI,
+        dateF,
+
+        caminNumber,
+        caminAddress,
         })
         dispatch({type:CREATE_CONTRACT_SUCCESS})
         } catch (error) {

@@ -7,7 +7,11 @@ import { LOGOUT_USER,
     CREATE_CONTRACT_ERROR,
     CREATE_CONTRACT_SUCCESS,
     CREATE_CERERE_SUCCESS,
-    SIDEBAR_CLOSE,SIDEBAR_OPEN, DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
+    GET_SINGLE_PRODUCT_BEGIN,
+    GET_SINGLE_PRODUCT_ERROR,
+    GET_SINGLE_PRODUCT_SUCCESS,
+    SIDEBAR_CLOSE,
+    SIDEBAR_OPEN, DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
 import { initialState } from './appContext';
 
 const reducer = (state,action) => {
@@ -33,6 +37,29 @@ const reducer = (state,action) => {
             showAlert:false,
             alertType:'',
             alertText:'',
+        }
+    }
+    if(action===GET_SINGLE_PRODUCT_BEGIN){
+        return {
+            ...state,
+        }
+    }
+    if(action===GET_SINGLE_PRODUCT_ERROR){
+        
+            return{
+            ...state,
+            showAlert:true,
+            alertType:'danger',
+            alertText:action.payload.msg,
+        }
+        
+    }
+    if(action===GET_SINGLE_PRODUCT_SUCCESS){
+        return{
+            ...state,
+           
+            showAlert:true,
+            alertType:'success',
         }
     }
     if(action.type===REGISTER_USER_BEGIN){
