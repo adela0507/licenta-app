@@ -1,4 +1,4 @@
-import React,{useReducer,useContext,useState} from "react";
+import React,{useReducer,useContext,useState, useEffect} from "react";
 import reducer from "./reducer";
 import axios from 'axios'
 import { LOGOUT_USER,HANDLE_CHANGE,
@@ -17,7 +17,14 @@ import { LOGOUT_USER,HANDLE_CHANGE,
      REGISTER_USER_SUCCESS,
     LOGIN_USER_BEGIN,
     LOGIN_USER_ERROR,
-    LOGIN_USER_SUCCESS } from "./action";
+    LOGIN_USER_SUCCESS,
+    SET_EDIT_CERERI,
+    SET_EDIT_CONTRACT,
+    GET_CERERI_BEGIN,
+    GET_CERERI_SUCCESS,
+    GET_CONTRACT_BEGIN,
+    GET_CONTRACT_SUCCESS,
+ } from "./action";
 
 const token=localStorage.getItem('token')
 const user=localStorage.getItem('user')
@@ -36,29 +43,45 @@ const initialState={
     tel:'',
     sign:'',
     studyYear:'',
-    situation:'',
+    situationOption:['Buget','Taxă'],
+    situation:'Buget',
+    studentOption:['Student român(nivel de licenţă,master)',
+    'Student român(nivel de licenţă,master) copil de cadru didactic sau cadru didactic auxiliar aflat în activitate sau pensionat din sistemul de învăţământ',
+'Student român orfan de unul sau ambii părinţi, student provenit din casele de copii sau plasament familial, student bursier CEEPUS',
+'Student al Uniunii Europene, Spaţiul Economic European şi Confederaţia Elveţiană',
+'Student străin bursier al statului român, student străin cu acorduri interruniversitare, interguvernamentale',
+'Student străin bursier, fără bursă, student străin cu acorduri interruniversitare,interguvernamentale pe care universitatea are obligaţia să-l cazeze în aceleaşi condiţii ca şi pe studenţii români',
+'Student străin de origine etnică română, student cetăţean român cu domiciliul în străinătate',
+'Student străin în baza acordurilor interuniversitare, interdepartamentale,programe mobilităţi (Erasmus, Atlantis, Tempus, DAAD, Fullbright etc.) ',
+'Student străin necomunitar, student străin pe cont propriu valutar, alte forme de pregătire universitară, alte categorii de persoane',
+'Student cu dizabilităţi'],
+ student:'Student român(nivel de licenţă,master)',
     grade:'',
     date:'',
     signContract:'',
-        dateI:'',
-        dateF:'',
-        dateId:'',
-        caminNumber:'',
-        caminAddress:'',
+    dateI:'',
+    dateF:'',
+    dateId:'',
+    caminNumber:'',
+    caminAddress:'',
     nameContract:'',
-        dadName:'',
-        momName:'',
-        school:'',
-        studyYearContract:'',
-        addressContract:'',
-        ci:'',
-        numberCI:'',
-        ciAddress:'',
-        dateContract:'',
-        cnpContract:'',
-        telContract:'',
-        emailContract:'',
-        taxe:'',
+    dadName:'',
+    momName:'',
+    school:'',
+    studyYearContract:'',
+    addressContract:'',
+    ci:'',
+    numberCI:'',
+    ciAddress:'',
+    dateContract:'',
+    cnpContract:'',
+    telContract:'',
+    emailContract:'',
+    taxe:'',
+    cererss:[],
+    totalCerers:0,
+    contractss:[],
+    totalContractss:0,
 
 }
 
@@ -168,6 +191,7 @@ const contracts=async()=>{
         dateF,
         caminNumber,
         caminAddress,
+        student
         }=state
         const response=await axios.post('/api/v1/contracts',{
             nameContract,
@@ -187,7 +211,7 @@ const contracts=async()=>{
         signContract,
         dateI,
         dateF,
-
+        student,
         caminNumber,
         caminAddress,
         })
@@ -203,9 +227,48 @@ const contracts=async()=>{
 const handleChange=({name,value})=>{
     dispatch({type:HANDLE_CHANGE,payload:{name,value}})
 }
+const authFetch=axios.create({
+    baseURL:'/api/v1',
+})
+const getCerers=async()=>{
+       let url=`/cerers`
+
+                dispatch({type:GET_CERERI_BEGIN})
+    try {
+     const {data}=await authFetch(url);
+        const {cererss,totalCerers}=data
+        //  const response=await axios.get('/api/v1/cerers',{ cererss,totalCerers})
+        dispatch({type:GET_CERERI_SUCCESS,payload:{
+            cererss,
+            totalCerers,
+        }})
+    } catch (error) {
+        console.log(error.response);
+
+    }
+    clearAlert()
+}
+const getContracts=async()=>{
+       let url=`/contracts`
+
+                dispatch({type:GET_CONTRACT_BEGIN})
+    try {
+     const {data}=await authFetch(url);
+        const {contractss,totalContractss}=data
+        dispatch({type:GET_CONTRACT_SUCCESS,payload:{
+            contractss,
+            totalContractss,
+        }})
+    } catch (error) {
+        console.log(error.response);
+        // logoutUser()
+
+    }
+    clearAlert()
+}
 
     return(
-<AppContext.Provider value={{...state,displayAlert,contracts,
+<AppContext.Provider value={{...state,getCerers,getContracts,displayAlert,contracts,
 registerUser,loginUser,logoutUser,openSidebar,closeSidebar,handleChange,cerers}}>
     {children}
 </AppContext.Provider>

@@ -1,6 +1,6 @@
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import React,{ useState } from "react";
+import React from "react";
 import data from '../components/data';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 
 const Camine=()=>{
-  const [readMore, setReadMore] = useState(false);
 return(
     <Wrapper>
     <Navbar/>
@@ -23,15 +22,8 @@ return(
                     <strong>{cazare.title}</strong>
                     <br />
                     <br />
-                   <img src={cazare.image}  />
+                   <img src={cazare.image} alt='' />
                    <p>{cazare.description}</p>
-                     {/* <p>
-          {readMore ? cazare.description: `${cazare.description.substring(0, 80)}... `}
-          <button onClick={() => setReadMore(!readMore)}>
-            {readMore ? 'arată mai puţin' : '  arată mai mult'}
-          </button>
-        </p> */}
-
                     <p>{cazare.description2}</p>
                     <br />
                    </div>

@@ -1,11 +1,9 @@
-import React,{ useState,useEffect } from "react";
+import React,{ useEffect } from "react";
 import "./HeroStyle.css";
 import Navbar from "../components/Navbar"
 import { Link, useNavigate } from "react-router-dom";
-import ImageUpload from "./ImageUpload";
 import { useAppContext } from "../context/appContext";
 import Alert from '../components/Alert'
-import FormRowSelect from "./FormSelectRow";
 
 
  const Aplication=()=>{
@@ -20,7 +18,6 @@ import FormRowSelect from "./FormSelectRow";
     studyYear,
     situation,
     situationOption,
-    situation1,situation2,
     handleChange,
     cerers,
     date,sign,
@@ -107,14 +104,19 @@ AN UNIVERSITAR 2023-2024</p>
         name="grade"
         onChange={handleCerereInput} />
         <br />
-        <label htmlFor="situation">Buget sau taxă?</label>
-<input value={situation} 
-        type="text" 
-        placeholder="Taxă sau buget" 
-        name="situation"
-        onChange={handleCerereInput} />
-        <br />
-
+        <div>
+                <label htmlFor="situation">Situatie</label>
+                <select 
+                name="situation" 
+                value={situation}
+                onChange={handleCerereInput}>
+                        {situationOption.map((itemValue,index)=>{
+                                return <option key={index} value={itemValue}>
+                                        {itemValue}
+                                </option>
+                        })}
+                </select>
+        </div>
             </p>
             <p className="cerere">*toate informațiile sunt obligatorii </p>
             <p className="cerere">Alte mențiuni (de exemplu- solicitarea unui loc în cămin pentru caz de boală etc)</p>
@@ -133,21 +135,16 @@ AN UNIVERSITAR 2023-2024</p>
         name="sign"
         placeholder="nume şi prenume"
         onChange={handleCerereInput} />
-        <br /> </div>
-            <br />             {showAlert && <Alert/>}
+        <br /> </div><br />        
+         {showAlert && <Alert/>}
 <br /> 
              <button type="submit" 
              onClick={handleSubmit}>Trimite</button>
-
-            {/* <h4>Semnatura</h4>
-<ImageUpload/> <br /> */}
         </form>
             <button ><Link to='/contract' className="button-text">Ai fost deja acceptat/ă?</Link></button> <br /> <br /> 
 
         </section>
-
     );
     <Navbar/>
 }
-
 export default Aplication;

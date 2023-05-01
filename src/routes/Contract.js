@@ -23,7 +23,8 @@ function Contract(){
         taxe,
         dateF,
         dateI,
-        dateId,
+        student,
+        studentOption,
         signContract,
         caminNumber,
         caminAddress,
@@ -48,7 +49,7 @@ const handleSubmit=(e)=>{
     || !numberCI || !ciAddress  || !cnpContract 
     || !signContract || !dateI || !dateF
      || !telContract || !caminAddress || !caminNumber
-     || !emailContract || !taxe  || !dateContract){
+     || !emailContract || !taxe  || !dateContract || !student){
         displayAlert();
         return;
      }
@@ -187,19 +188,20 @@ e-mail
 /> 
 chirias.  <br />  <br />
 1.2.1 Categoria studentului cazat în funcţie de subvenţia de cămin <br />
-a. Student român(nivel de licenţă,master) <br />
-b. Student român(nivel de licenţă,master) copil de cadru didactic sau 
-cadru didactic auxiliar aflat în activitate sau pensionat din sistemul de învăţământ <br />
-c. Student român orfan de unul sau ambii părinţi, student provenit din casele de copii sau plasament familial, student bursier CEEPUS <br />
-d. Student al Uniunii Europene, Spaţiul Economic European şi Confederaţia Elveţiană <br />
-e. Student străin bursier al statului român, student străin cu acorduri interruniversitare, interguvernamentale <br />
-f. Student străin bursier, fără bursă, student străin cu acorduri interruniversitare,
-interguvernamentale pe care universitatea are obligaţia să-l cazeze în aceleaşi condiţii ca şi pe studenţii români <br />
-g. Student străin de origine etnică română, student cetăţean român cu domiciliul în străinătate <br />
-h. Student străin în baza acordurilor interuniversitare, interdepartamentale,programe mobilităţi (Erasmus, Atlantis, Tempus, DAAD, Fullbright etc.) <br />
-i. Student străin necomunitar, student străin pe cont propriu valutar, alte forme de pregătire universitară, alte categorii de persoane <br /> 
-j. Student cu dizabilităţi
-<br /> <br />
+<div>
+                <label htmlFor="student">Situatie</label>
+                <select 
+                name="student" 
+                value={student}
+                onChange={handleContractInput}>
+                        {studentOption.map((itemValue,index)=>{
+                                return <option key={index} value={itemValue}>
+                                        {itemValue}
+                                </option>
+                        })}
+                </select>
+        </div>
+<br />
 <strong> Art. 2. Obiectivul Contractului</strong> <br />
 <p>2.1 Obiectul contractului îl constituie închirierea, pe parcursul anului universitar, a unui loc în căminul <input type="text" name="caminNumber" id="caminNumber" placeholder="in ce camin ai fost repartizta?" value={caminNumber} onChange={handleContractInput}/>,situat la adresa Cluj Napoca, str. <input type="text" placeholder="adresa completa" name="caminAddress" value={caminAddress} onChange={handleContractInput}/>, a instalaţiilor şi spaţiilor 
 comune aferente, a bunurilor înregistrate în inventar, proprietate a Universităţii Babeş-Bolyai, conform procesului-verbal de predare-primire întocmit la cazare şi a celorlalte anexe ale prezentului
@@ -369,7 +371,7 @@ Fiecare locatar are îndatorirea să-și desfășoare activitatea în așa fel �
 19. să fie atenți la ieșirea din cadă de dus sau cabina de dus, să nu alunece. <br /> </strong>
 
 Chirias, <br />
-<div className="btn"> 
+<div className="btnleft"> 
 <label htmlFor="signContract">Semnătură</label>
         <br/>
         <input value={signContract} 
@@ -381,9 +383,6 @@ Chirias, <br />
 </p>
 </div> 
                 {showAlert && <Alert/>} <br />
-
-{/* <h4 className="cerere1">Semnatura</h4>
-<ImageUpload/> */}
             <button type="submit" onClick={handleSubmit}>Trimite contractul</button>
 
 

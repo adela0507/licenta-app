@@ -8,10 +8,10 @@ const Error = () => {
       <Navbar/>
       <h2>404</h2>
       <br />
-      <h3>Sorry, the page you tried cannot be found</h3>
+      <h3>Scuze, pagina pe care încerci să o accesezi nu poate fi găsită!</h3>
       <br />
       <button className="btn">
-      <Link to='/'>back home</Link>
+      <Link to='/'>Înapoi</Link>
       </button>
       
     </section>

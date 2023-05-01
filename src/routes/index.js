@@ -6,6 +6,6 @@ import Error from './Error';
 import Status from './Status';
 import Camine from './Camine';
 import StatusContract from './StatusContract';
+import GetAllCereri from './GetAllCereri'
 
-
-export{Home,About,Cereri,Contract,Error,Status,Camine,StatusContract};
+export{Home,GetAllCereri ,About,Cereri,Contract,Error,Status,Camine,StatusContract};

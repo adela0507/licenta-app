@@ -17,6 +17,7 @@ function Experience(){
                 <li><a href="#Perioadadecazare">Perioada în care poţi fi cazat</a></li>
                 <li><a href="#Cumpotiaplica">Cum pot aplica?</a></li>
                 <li><a href="#Diverse">Diverse</a></li>
+                <li><a href="#Adrese">Adrese</a></li>
 
             </ul>
             <br /><br /><br /><br />
@@ -43,7 +44,7 @@ function Experience(){
                 <h3 id="Cumpotiaplica">Cum pot aplica?</h3>
                 <p>Este foarte simplu! În primul rând trebuie să fii student al facultăţii noastre. <br />
                  Ai nevoie de un cont pe platforma noastra.
-                 <br /> Apoi poţi completa <Link to='/cereri' className="special-text-home">cererea</Link>. Aceatsa va fi urmata de aşteptarea răspunsului care va apărea în secţiunea <Link to='/status' className="special-text-home">STATUS</Link>. </p>
+                 <br /> Apoi poţi completa <Link to='/cereri' className="special-text-home">cererea</Link>.  </p>
                 <br />
             </section>
              <section className="left">
@@ -57,6 +58,16 @@ function Experience(){
               În apropierea Căminului 2 Hașdeu s-a amenajat un teatru de vară în care studenții pot organiza diferite activități.</p>
                 <br />
             </section>
+            <sectoin className="right">
+                <h3 id="Adrese">Unde sunt locatlizate căminele</h3>
+                <p>Căminul 16 din Haşdeu este localizat pe strada Bogdan Petriceicu nr 78. <br />
+                Căminul 17 din Haşdeu este localizat pe strada Bogdan Petriceicu nr 90-92. <br />
+                Căminul 14 din Haşdeu este localizat pe strada Bogdan Petriceicu nr 45. <br />
+                Căminul 3 din Haşdeu este localizat pe strada Bogdan Petriceicu nr 45. <br />
+                Căminul 5 din Haşdeu este localizat pe strada Bogdan Petriceicu nr 45. <br />
+                Căminul 1 Economica este localizat pe strada Teodor Mihali nr 59. <br />
+                Căminul Enjoy este localizat pe strada  Alexandru Vaida Voevod nr 55.</p>
+            </sectoin>
 
 <br /><br />
             <h5 className="white">  Ce mai aştepţi? Completează acum <Link to='/cereri' className="special-text-home">cererea</Link> pentru a beneficia de un loc într-unul dintre cămine.</h5>

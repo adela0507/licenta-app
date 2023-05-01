@@ -11,7 +11,21 @@ import { LOGOUT_USER,
     GET_SINGLE_PRODUCT_ERROR,
     GET_SINGLE_PRODUCT_SUCCESS,
     SIDEBAR_CLOSE,
-    SIDEBAR_OPEN, DISPLAY_ALERT,CLEAR_ALERT,REGISTER_USER_BEGIN,REGISTER_USER_ERROR,REGISTER_USER_SUCCESS,LOGIN_USER_BEGIN,LOGIN_USER_ERROR,LOGIN_USER_SUCCESS } from "./action";
+    SIDEBAR_OPEN,
+     DISPLAY_ALERT,
+     CLEAR_ALERT,
+     REGISTER_USER_BEGIN,
+     REGISTER_USER_ERROR,
+     REGISTER_USER_SUCCESS,
+     LOGIN_USER_BEGIN,
+     LOGIN_USER_ERROR,
+     LOGIN_USER_SUCCESS,
+     SET_EDIT_CERERI,
+    SET_EDIT_CONTRACT,
+GET_CERERI_BEGIN,
+GET_CERERI_SUCCESS,
+GET_CONTRACT_BEGIN,
+GET_CONTRACT_SUCCESS, } from "./action";
 import { initialState } from './appContext';
 
 const reducer = (state,action) => {
@@ -183,6 +197,38 @@ const reducer = (state,action) => {
             showAlert:true,
             alertType:'danger',
             alertText:action.payload.msg,
+        }
+    }
+    if(action.type===GET_CERERI_BEGIN){
+        return{
+            ...state,
+            showAlert:false,
+        }
+    }
+    if(action.type===GET_CERERI_SUCCESS){
+        return {
+            ...state,
+            showAlert:true,
+            cererss:action.payload.cererss,
+            totalCerers:action.payload.totalCerers,
+            alertType:'success',
+            alertText:'toate cererile',
+        }
+    }
+    if(action.type===GET_CONTRACT_BEGIN){
+        return{
+            ...state,
+            showAlert:false,
+        }
+    }
+    if(action.type===GET_CONTRACT_SUCCESS){
+        return {
+            ...state,
+            showAlert:true,
+            contractss:action.payload.contractss,
+            totalContractss:action.payload.totalContractss,
+            alertType:'success',
+            alertText:'toate cererile',
         }
     }
       throw new Error(`no such action:${action.type}`)

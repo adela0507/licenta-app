@@ -54,6 +54,14 @@ const camin=[
         description2:'Regia(plata):140 lei pe lună ',
 
     },
+    {
+        id:7,
+        image:'https://studentpenet.ro/wp-content/uploads/2011/09/camine-cazare-cluj.jpg',
+        title:'Căminul Enjoy',
+        description:'Căminul Enjoy este privat, mixt, aproape de Iulius Mall şi de FSEGA, având camera cu 3 locuri, baia în cameră şi oficiu fiind la comun.',
+        description2:'Regia(plata):650 lei pe lună  ',
+
+    },
 ];
 
 export default camin;

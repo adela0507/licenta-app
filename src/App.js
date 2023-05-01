@@ -4,8 +4,7 @@ import  {Login}  from "./Login";
 import './App.css';
 import{Route,Routes} from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
-import {Home,About,Cereri,Error,Status,Camine,Contract,StatusContract}from './routes';
-
+import {Home,GetAllCereri, About,Cereri,Error,Status,Camine,Contract,StatusContract}from './routes';
 
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/camine" element={<Camine/>}/>
-        {/* { <Route path="/camine/:id" element={<SingleCaminPage/>}/> } */}
+        <Route path="/getAll" element={<GetAllCereri/>}/>
         <Route path="/status" element={<ProtectedRoute user={user}>
           <Status user={user}/>
           </ProtectedRoute>}/>

@@ -1,5 +1,5 @@
 import "./NavbarStyles.css";
-import {FaHome,FaAlignRight,FaUserCircle,FaCaretDown, FaAlignLeft,FaBars} from 'react-icons/fa'
+import {FaCaretDown,FaBars} from 'react-icons/fa'
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import { useState } from "react";
 import {MenuItems} from '../components/MenuItems'
 
 const Navbar=()=>{
-    const{logoutUser,user,closeSidebar}=useAppContext()
+    const{logoutUser,user}=useAppContext()
     const [showLogout,setShowLogout]=useState(false)
     const navigate=useNavigate();
     const[extendNavbar,setExtendNavbar]=useState(false);
