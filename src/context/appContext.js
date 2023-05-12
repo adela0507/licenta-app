@@ -24,6 +24,12 @@ import { LOGOUT_USER,HANDLE_CHANGE,
     GET_CERERI_SUCCESS,
     GET_CONTRACT_BEGIN,
     GET_CONTRACT_SUCCESS,
+    EDIT_CERERE_BEGIN,
+    EDIT_CERERE_ERROR,
+    EDIT_CERERE_SUCCESS,
+    EDIT_CONTRACT_BEGIN,
+    EDIT_CONTRACT_ERROR,
+    EDIT_CONTRACT_SUCCESS,
  } from "./action";
 
 const token=localStorage.getItem('token')
@@ -82,6 +88,9 @@ const initialState={
     totalCerers:0,
     contractss:[],
     totalContractss:0,
+    idEditing:false,
+    editCerereId:'',
+    editContractId:'',
 
 }
 
@@ -156,18 +165,18 @@ const cerers=async()=>{
     try {
         const{name,lastName,email,tel,grade,
         studyYear,address,date,sign,situation}=state
-        const response=await axios.post('/api/v1/cerers',{
+        await axios.post('/api/v1/cerers',{
             name,lastName,tel,grade,email,studyYear,address,date,sign,situation,
         })
         dispatch({type:CREATE_CERERE_SUCCESS})
         } catch (error) {
-            if(error.response.status){
+            if(error.response.status===401) return
                 dispatch({type:CREATE_CERERE_ERROR,
                 payload:{msg:error.response.data.msg},})
             }
         clearAlert()
     }
-}
+
 const contracts=async()=>{
             dispatch({type:CREATE_CONTRACT_BEGIN})
 
@@ -225,7 +234,8 @@ const contracts=async()=>{
     }
 }
 const handleChange=({name,value})=>{
-    dispatch({type:HANDLE_CHANGE,payload:{name,value}})
+    dispatch({type:HANDLE_CHANGE,
+        payload:{name,value},})
 }
 const authFetch=axios.create({
     baseURL:'/api/v1',
@@ -244,7 +254,6 @@ const getCerers=async()=>{
         }})
     } catch (error) {
         console.log(error.response);
-
     }
     clearAlert()
 }
@@ -266,9 +275,48 @@ const getContracts=async()=>{
     }
     clearAlert()
 }
+// const  setEditContract=(id)=>{
+//     dispatch({type:SET_EDIT_CONTRACT,payload:{id}})
+// }
+// const setEditCerers=(id)=>{
+//     dispatch({type:SET_EDIT_CERERI,payload:{id}})
+// }
+// const editCerere=async()=>{
+//     dispatch({type:EDIT_CERERE_BEGIN})
+//     try {
+//         const{name,email,grade}=state
+//         await authFetch.patch(`/cerers/${state.editCereriId}`,{
+//             name,email,grade
+//         })
+//         dispatch({type:EDIT_CERERE_SUCCESS})
+//     } catch (error) {
+//         if(error.response.status===401)
+//         dispatch({type:EDIT_CERERE_ERROR,payload:{
+//             msg:error.response.data.msg
+//     },})
+// }
+// clearAlert()
+// }
+const editContract=async()=>{
+    dispatch({type:EDIT_CONTRACT_BEGIN})
+    try {
+        const{name,email,grade}=state
+        await authFetch.patch(`/contracts/${state.editContractId}`,{
+            name,email,grade
+        })
+        dispatch({type:EDIT_CONTRACT_SUCCESS})
+        // dispatch({type:CLEAR_VALUES})
+    } catch (error) {
+        if(error.response.status===401)
+        dispatch({type:EDIT_CONTRACT_ERROR,payload:{
+            msg:error.response.data.msg
+    },})
+}
+clearAlert()
+}
 
     return(
-<AppContext.Provider value={{...state,getCerers,getContracts,displayAlert,contracts,
+<AppContext.Provider value={{...state,editContract,getCerers,getContracts,displayAlert,contracts,
 registerUser,loginUser,logoutUser,openSidebar,closeSidebar,handleChange,cerers}}>
     {children}
 </AppContext.Provider>

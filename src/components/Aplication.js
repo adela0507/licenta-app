@@ -8,7 +8,8 @@ import Alert from '../components/Alert'
 
  const Aplication=()=>{
         const navigate=useNavigate()
-    const{name,showAlert,
+    const{name,
+    showAlert,
     displayAlert,
     lastName,
     email,
@@ -21,23 +22,24 @@ import Alert from '../components/Alert'
     handleChange,
     cerers,
     date,sign,
-    alertType,}=useAppContext()
+    alertType,
+    isEditing,
+    editCerere}=useAppContext()
 
-useEffect(()=>{
-        if(alertType ==='success'){
-        setTimeout(()=>{
-                navigate('/status')
-        },3000)
-}},[alertType,navigate]);
 
     const handleSubmit=(e)=>{
         e.preventDefault();
         if(!name || !lastName || !email || !address || !tel || !studyYear || !grade || !sign ){
             displayAlert();
-            return;
+            return
         }
+        // if(isEditing){
+        // editCerere()
+        // return
+        // }
         cerers()
         }
+
         const handleCerereInput=(e)=>{
     const name=e.target.name
     const value=e.target.value
@@ -50,6 +52,8 @@ useEffect(()=>{
         <div className="title">
         </div>
         <form >
+                {/* <h3>{isEditing ? 'Editeaza cererea' : 'Completeaza cererea'}</h3> */}
+                {showAlert && <Alert/>}
             <p className="cerere">
                 CERERE PENTRU ACORDAREA UNUI LOC DE CAZARE ÎN CĂMINELE STUDENŢEŞTI <br />
 AN UNIVERSITAR 2023-2024</p>
@@ -86,7 +90,7 @@ AN UNIVERSITAR 2023-2024</p>
         <br/>
         <input value={email} 
         type="email" 
-        placeholder="youremail@gmail.com" 
+        placeholder="youremail@gmail.com"
         name="email"
         onChange={handleCerereInput} />
         <br />
@@ -136,10 +140,9 @@ AN UNIVERSITAR 2023-2024</p>
         placeholder="nume şi prenume"
         onChange={handleCerereInput} />
         <br /> </div><br />        
-         {showAlert && <Alert/>}
 <br /> 
-             <button type="submit" 
-             onClick={handleSubmit}>Trimite</button>
+             <button type="submit" className="btn"
+             onClick={handleSubmit}><Link to='/status'>Trimite</Link></button>
         </form>
             <button ><Link to='/contract' className="button-text">Ai fost deja acceptat/ă?</Link></button> <br /> <br /> 
 
