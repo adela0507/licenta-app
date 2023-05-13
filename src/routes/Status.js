@@ -1,6 +1,8 @@
+import React from 'react'
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-function Status(){
+import SingleCerereContainer from "../components/SingleCerereContainer";
+const Status=()=>{
 return(
     <div>
         <Navbar/><br /> <br /> <br />
@@ -8,6 +10,7 @@ return(
     <h3>Verifică-ţi regulat adresa de e-mail introdu să pentru a putea urmării schimbările!</h3> <br />
     <p>Pentru nelămuriri, reclamaţii sau întrebări: <strong><a href="mailto:adelamiclea709@yahoo.com" target="_blank">
 contactaţi-ne!</a></strong>  </p> <br />
+    <SingleCerereContainer/>
     <Footer/>
     </div>
 );

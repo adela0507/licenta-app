@@ -16,7 +16,10 @@ function Hero(){
    </div>
         <button className="button-home"><Link to='/cereri' className="button-text">Completează acum cererea!</Link></button> 
 <Review/>
+        <button className="button-home"><Link to='/getAll' className="button-text">Vezi cererile</Link></button> 
+
 </section>
+
     );
 }
 

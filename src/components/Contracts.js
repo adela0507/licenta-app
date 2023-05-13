@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppContext } from '../context/appContext'
 const Contracts = ({emailContract,nameContract,telContract,_id}) => {
-  const {setEditContract}=useAppContext()
+  const {setEditContract,deleteContracts}=useAppContext()
   return (
     <div>
       <table border='1' width='800' height='200'>
@@ -19,6 +19,8 @@ const Contracts = ({emailContract,nameContract,telContract,_id}) => {
     </tr>
     </tbody>
    </table>
+      <button type='button' className='btn' onClick={()=>deleteContracts(_id)}>Sterge</button>
+
        {/* <button type='button' className='btn' onClick={()=>{setEditContract(_id)}}>Modifica statusul</button> */}
 
     </div>

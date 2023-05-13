@@ -22,16 +22,23 @@ import { LOGOUT_USER,
      LOGIN_USER_SUCCESS,
      SET_EDIT_CERERI,
     SET_EDIT_CONTRACT,
-GET_CERERI_BEGIN,
-GET_CERERI_SUCCESS,
-GET_CONTRACT_BEGIN,
-GET_CONTRACT_SUCCESS,
-EDIT_CERERE_BEGIN,
-EDIT_CERERE_ERROR,
-EDIT_CERERE_SUCCESS,
-EDIT_CONTRACT_BEGIN,
-EDIT_CONTRACT_ERROR,
-EDIT_CONTRACT_SUCCESS, } from "./action";
+    GET_CERERI_BEGIN,
+    GET_CERERI_SUCCESS,
+    GET_CONTRACT_BEGIN,
+    GET_CONTRACT_SUCCESS,
+    EDIT_CERERE_BEGIN,
+    EDIT_CERERE_ERROR,
+    EDIT_CERERE_SUCCESS,
+    EDIT_CONTRACT_BEGIN,
+    EDIT_CONTRACT_ERROR,
+    EDIT_CONTRACT_SUCCESS,
+    GET_SINGLE_CERERI_BEGIN,
+    GET_SINGLE_CERERI_SUCCESS,
+    GET_SINGLE_CONTRACT_BEGIN,
+    GET_SINGLE_CONTRACT_SUCCESS,
+    DELETE_CERERI_BEGIN,
+    DELETE_CONTRACT_BEGIN,
+ } from "./action";
 import { initialState } from './appContext';
 
 const reducer = (state,action) => {
@@ -276,6 +283,35 @@ const reducer = (state,action) => {
             alertText:'toate cererile',
         }
     }
+    if(action.type===GET_SINGLE_CERERI_BEGIN){
+        return{
+            ...state,
+            showAlert:false,
+        }
+    }
+    if(action.type===GET_SINGLE_CERERI_SUCCESS){
+        return {
+            ...state,
+            showAlert:true,
+            cereriUtilizator:action.payload.cereriUtilizator,
+            totalCereriUtilizator:action.payload.totalCereriUtilizator,
+      
+        }
+    }if(action.type===GET_SINGLE_CONTRACT_BEGIN){
+        return{
+            ...state,
+            showAlert:false,
+        }
+    }
+    if(action.type===GET_SINGLE_CONTRACT_SUCCESS){
+        return {
+            ...state,
+            showAlert:true,
+            contractUtilizator:action.payload.contractUtilizator,
+            totalContarctUtilizator:action.payload.totalContractUtilizator,
+      
+        }
+    }
     if(action.type===GET_CONTRACT_BEGIN){
         return{
             ...state,
@@ -313,6 +349,15 @@ const reducer = (state,action) => {
             emailContract,
             nameContract,
 
+        }
+    }
+    if(action.type===DELETE_CERERI_BEGIN){
+        return{
+            ...state
+        }
+    }if(action.type===DELETE_CONTRACT_BEGIN){
+        return{
+            ...state
         }
     }
       throw new Error(`no such action:${action.type}`)

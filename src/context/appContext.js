@@ -30,6 +30,11 @@ import { LOGOUT_USER,HANDLE_CHANGE,
     EDIT_CONTRACT_BEGIN,
     EDIT_CONTRACT_ERROR,
     EDIT_CONTRACT_SUCCESS,
+    GET_SINGLE_CERERI_BEGIN,
+    GET_SINGLE_CERERI_SUCCESS,
+    GET_SINGLE_CONTRACT_BEGIN,
+    DELETE_CERERI_BEGIN,
+    DELETE_CONTRACT_BEGIN,
  } from "./action";
 
 const token=localStorage.getItem('token')
@@ -84,13 +89,19 @@ const initialState={
     telContract:'',
     emailContract:'',
     taxe:'',
+    singleCerere:[],
+    totalSingleCerere:0,
     cererss:[],
     totalCerers:0,
+    cereriUtilizator:[],
+    totalCereriUtilizator:0,
     contractss:[],
     totalContractss:0,
-    idEditing:false,
-    editCerereId:'',
-    editContractId:'',
+    contractUtilizator:[],
+    totalContractUtilizator:0,
+    // idEditing:false,
+    // editCerereId:'',
+    // editContractId:'',
 
 }
 
@@ -257,6 +268,33 @@ const getCerers=async()=>{
     }
     clearAlert()
 }
+
+const deleteCerers=async(cerereId)=>{
+    dispatch({type:DELETE_CERERI_BEGIN})
+    try {
+     await authFetch.delete(`/cerers/${cerereId}`);
+     getCerers()
+    } catch (error) {
+        console.log(error.response);
+    }
+    clearAlert()
+}
+
+const getSingleCerere=async()=>{
+       let url=`/cerers`
+                dispatch({type:GET_SINGLE_CERERI_BEGIN})
+    try {
+     const {data}=await authFetch(url);
+        const {cereriUtilizator,totalCereriUtilizator}=data
+        dispatch({type:GET_SINGLE_CERERI_SUCCESS,payload:{
+            cereriUtilizator,
+            totalCereriUtilizator,
+        }})
+    } catch (error) {
+        console.log(error.response);
+    }
+    clearAlert()
+}
 const getContracts=async()=>{
        let url=`/contracts`
 
@@ -270,33 +308,64 @@ const getContracts=async()=>{
         }})
     } catch (error) {
         console.log(error.response);
+        logoutUser()
+
+    }
+    clearAlert()
+}
+const deleteContracts=async(contractId)=>{
+    dispatch({type:DELETE_CONTRACT_BEGIN})
+    try {
+     await authFetch.delete(`/contracts/${contractId}`);
+     getContracts()
+    } catch (error) {
+        console.log(error.response);
+    }
+    clearAlert()
+}
+
+
+
+const getSingleContract=async()=>{
+       let url=`/contracts`
+
+                dispatch({type:GET_SINGLE_CONTRACT_BEGIN})
+    try {
+     const {data}=await authFetch(url);
+        const {contractUtilizator,totalContractUtilizator}=data
+        dispatch({type:GET_SINGLE_CERERI_SUCCESS,payload:{
+            contractUtilizator,
+            totalContractUtilizator,
+        }})
+    } catch (error) {
+        console.log(error.response);
         // logoutUser()
 
     }
     clearAlert()
 }
-// const  setEditContract=(id)=>{
-//     dispatch({type:SET_EDIT_CONTRACT,payload:{id}})
-// }
-// const setEditCerers=(id)=>{
-//     dispatch({type:SET_EDIT_CERERI,payload:{id}})
-// }
-// const editCerere=async()=>{
-//     dispatch({type:EDIT_CERERE_BEGIN})
-//     try {
-//         const{name,email,grade}=state
-//         await authFetch.patch(`/cerers/${state.editCereriId}`,{
-//             name,email,grade
-//         })
-//         dispatch({type:EDIT_CERERE_SUCCESS})
-//     } catch (error) {
-//         if(error.response.status===401)
-//         dispatch({type:EDIT_CERERE_ERROR,payload:{
-//             msg:error.response.data.msg
-//     },})
-// }
-// clearAlert()
-// }
+const  setEditContract=(id)=>{
+    dispatch({type:SET_EDIT_CONTRACT,payload:{id}})
+}
+const setEditCerers=(id)=>{
+    dispatch({type:SET_EDIT_CERERI,payload:{id}})
+}
+const editCerere=async()=>{
+    dispatch({type:EDIT_CERERE_BEGIN})
+    try {
+        const{name,email,grade}=state
+        await authFetch.patch(`/cerers/${state.editCereriId}`,{
+            name,email,grade
+        })
+        dispatch({type:EDIT_CERERE_SUCCESS})
+    } catch (error) {
+        if(error.response.status===401)
+        dispatch({type:EDIT_CERERE_ERROR,payload:{
+            msg:error.response.data.msg
+    },})
+}
+clearAlert()
+}
 const editContract=async()=>{
     dispatch({type:EDIT_CONTRACT_BEGIN})
     try {
@@ -314,10 +383,25 @@ const editContract=async()=>{
 }
 clearAlert()
 }
+useEffect(()=>{
+getSingleCerere()
+},[])
 
     return(
-<AppContext.Provider value={{...state,editContract,getCerers,getContracts,displayAlert,contracts,
-registerUser,loginUser,logoutUser,openSidebar,closeSidebar,handleChange,cerers}}>
+<AppContext.Provider value={{...state,getSingleCerere,
+getSingleContract,
+deleteCerers,
+deleteContracts,
+setEditCerers,
+setEditContract,
+editContract,
+editCerere,
+getCerers,
+getContracts,
+displayAlert,
+contracts,
+registerUser,
+loginUser,logoutUser,openSidebar,closeSidebar,handleChange,cerers}}>
     {children}
 </AppContext.Provider>
 );
