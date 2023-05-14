@@ -14,7 +14,7 @@ const ContractContainer = () => {
     }
 
   return (
-    <div>
+    <div className='culoare'>
       <h5>{totalContractss} contracte gasite </h5>
       <div>
         {contractss.map((contract)=>{

@@ -212,61 +212,6 @@ const reducer = (state,action) => {
             alertText:action.payload.msg,
         }
     }
-    if(action.type===EDIT_CERERE_BEGIN)
-    {
-        return{
-            ...state,
-            isEditing:true,
-            
-        }
-    }
-    if(action.type===EDIT_CERERE_SUCCESS)
-    {
-        return{
-            ...state,
-            isLoading:false,
-            showAlert:true,
-            alertType:'success',
-            alertText:'CERERE ACTUALIZATA',
-        }
-    }
-    if(action.type===EDIT_CERERE_ERROR)
-    {
-        return{
-            ...state,
-            isLoading:false,
-            showAlert:true,
-            alertType:'danger',
-            alertText:action.payload.msg,
-        }
-    }
-    if(action.type===EDIT_CONTRACT_BEGIN)
-    {
-        return{
-            ...state,
-            
-        }
-    }
-    if(action.type===EDIT_CONTRACT_SUCCESS)
-    {
-        return{
-            ...state,
-            isLoading:false,
-            showAlert:true,
-            alertType:'success',
-            alertText:'CONTRACT ACTUALIZATA',
-        }
-    }
-    if(action.type===EDIT_CONTRACT_ERROR)
-    {
-        return{
-            ...state,
-            isLoading:false,
-            showAlert:true,
-            alertType:'danger',
-            alertText:action.payload.msg,
-        }
-    }
     if(action.type===GET_CERERI_BEGIN){
         return{
             ...state,
@@ -282,21 +227,7 @@ const reducer = (state,action) => {
             alertType:'success',
             alertText:'toate cererile',
         }
-    }
-    if(action.type===GET_SINGLE_CERERI_BEGIN){
-        return{
-            ...state,
-            showAlert:false,
-        }
-    }
-    if(action.type===GET_SINGLE_CERERI_SUCCESS){
-        return {
-            ...state,
-            showAlert:true,
-            cereriUtilizator:action.payload.cereriUtilizator,
-            totalCereriUtilizator:action.payload.totalCereriUtilizator,
-      
-        }
+    
     }if(action.type===GET_SINGLE_CONTRACT_BEGIN){
         return{
             ...state,
@@ -326,29 +257,6 @@ const reducer = (state,action) => {
             totalContractss:action.payload.totalContractss,
             alertType:'success',
             alertText:'toate cererile',
-        }
-    }
-    if(action.type===SET_EDIT_CERERI){
-        const cereri=state.cererss.find((cereri)=>cereri._id===action.payload.id)
-        const {_id,grade,email,name}=cereri
-        return{
-            ...state,
-            idEditing:true,
-            editCereriId:_id,
-            grade,
-            email,
-            name,
-        }
-    }
-    if(action.type===SET_EDIT_CONTRACT){
-        const contract=state.contracts.find((contracte)=>contracte._id===action.payload.id)
-        const {_id,emailContract,nameContract}=contract
-        return{
-            ...state,
-            editContracteId:_id,
-            emailContract,
-            nameContract,
-
         }
     }
     if(action.type===DELETE_CERERI_BEGIN){

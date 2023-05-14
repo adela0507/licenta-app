@@ -369,9 +369,8 @@ Fiecare locatar are îndatorirea să-și desfășoare activitatea în așa fel �
 17. să nu efectueze nicio modificare a camerei, a mobilierului și a poziției lui în camere, a instalației aferente camerei; <br />
 18. să nu utilizeze spațiile de locuit și cele de folosință comună în alte scopuri decât cele pentru care au fost atribuite; <br />
 19. să fie atenți la ieșirea din cadă de dus sau cabina de dus, să nu alunece. <br /> </strong>
-
+<div className="signcontract"> 
 Chirias, <br />
-<div className="btnleft"> 
 <label htmlFor="signContract">Semnătură</label>
         <br/>
         <input value={signContract} 
@@ -381,14 +380,12 @@ Chirias, <br />
         onChange={handleContractInput} />
         <br /> </div>
 </p>
-</div> 
+</div> <br />
                 {showAlert && <Alert/>} <br />
             <button type="submit" onClick={handleSubmit}>Trimite contractul</button>
-
-
-            </form>
-                        <button ><Link to='/cereri' className="button-text">Încă nu ai aplicat?</Link></button> 
-
+                </form> <br />
+                <br />
+            <button ><Link to='/cereri' className="button-text">Încă nu ai aplicat?</Link></button> 
             </section>
     <Footer/>
     </div>

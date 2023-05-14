@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import SearchContainer from'../components/SearchContainer'
 import CereriContainer from '../components/CereriContainer'
 import ContractContainer from '../components/ContractContainer'
 import { useAppContext } from '../context/appContext'

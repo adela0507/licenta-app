@@ -18,21 +18,10 @@ import { LOGOUT_USER,HANDLE_CHANGE,
     LOGIN_USER_BEGIN,
     LOGIN_USER_ERROR,
     LOGIN_USER_SUCCESS,
-    SET_EDIT_CERERI,
-    SET_EDIT_CONTRACT,
     GET_CERERI_BEGIN,
     GET_CERERI_SUCCESS,
     GET_CONTRACT_BEGIN,
     GET_CONTRACT_SUCCESS,
-    EDIT_CERERE_BEGIN,
-    EDIT_CERERE_ERROR,
-    EDIT_CERERE_SUCCESS,
-    EDIT_CONTRACT_BEGIN,
-    EDIT_CONTRACT_ERROR,
-    EDIT_CONTRACT_SUCCESS,
-    GET_SINGLE_CERERI_BEGIN,
-    GET_SINGLE_CERERI_SUCCESS,
-    GET_SINGLE_CONTRACT_BEGIN,
     DELETE_CERERI_BEGIN,
     DELETE_CONTRACT_BEGIN,
  } from "./action";
@@ -93,16 +82,8 @@ const initialState={
     totalSingleCerere:0,
     cererss:[],
     totalCerers:0,
-    cereriUtilizator:[],
-    totalCereriUtilizator:0,
     contractss:[],
     totalContractss:0,
-    contractUtilizator:[],
-    totalContractUtilizator:0,
-    // idEditing:false,
-    // editCerereId:'',
-    // editContractId:'',
-
 }
 
 const AppContext= React.createContext();
@@ -279,22 +260,6 @@ const deleteCerers=async(cerereId)=>{
     }
     clearAlert()
 }
-
-const getSingleCerere=async()=>{
-       let url=`/cerers`
-                dispatch({type:GET_SINGLE_CERERI_BEGIN})
-    try {
-     const {data}=await authFetch(url);
-        const {cereriUtilizator,totalCereriUtilizator}=data
-        dispatch({type:GET_SINGLE_CERERI_SUCCESS,payload:{
-            cereriUtilizator,
-            totalCereriUtilizator,
-        }})
-    } catch (error) {
-        console.log(error.response);
-    }
-    clearAlert()
-}
 const getContracts=async()=>{
        let url=`/contracts`
 
@@ -323,79 +288,28 @@ const deleteContracts=async(contractId)=>{
     }
     clearAlert()
 }
+// const getSingleContract=async()=>{
+//        let url=`/contracts`
 
-
-
-const getSingleContract=async()=>{
-       let url=`/contracts`
-
-                dispatch({type:GET_SINGLE_CONTRACT_BEGIN})
-    try {
-     const {data}=await authFetch(url);
-        const {contractUtilizator,totalContractUtilizator}=data
-        dispatch({type:GET_SINGLE_CERERI_SUCCESS,payload:{
-            contractUtilizator,
-            totalContractUtilizator,
-        }})
-    } catch (error) {
-        console.log(error.response);
-        // logoutUser()
-
-    }
-    clearAlert()
-}
-const  setEditContract=(id)=>{
-    dispatch({type:SET_EDIT_CONTRACT,payload:{id}})
-}
-const setEditCerers=(id)=>{
-    dispatch({type:SET_EDIT_CERERI,payload:{id}})
-}
-const editCerere=async()=>{
-    dispatch({type:EDIT_CERERE_BEGIN})
-    try {
-        const{name,email,grade}=state
-        await authFetch.patch(`/cerers/${state.editCereriId}`,{
-            name,email,grade
-        })
-        dispatch({type:EDIT_CERERE_SUCCESS})
-    } catch (error) {
-        if(error.response.status===401)
-        dispatch({type:EDIT_CERERE_ERROR,payload:{
-            msg:error.response.data.msg
-    },})
-}
-clearAlert()
-}
-const editContract=async()=>{
-    dispatch({type:EDIT_CONTRACT_BEGIN})
-    try {
-        const{name,email,grade}=state
-        await authFetch.patch(`/contracts/${state.editContractId}`,{
-            name,email,grade
-        })
-        dispatch({type:EDIT_CONTRACT_SUCCESS})
-        // dispatch({type:CLEAR_VALUES})
-    } catch (error) {
-        if(error.response.status===401)
-        dispatch({type:EDIT_CONTRACT_ERROR,payload:{
-            msg:error.response.data.msg
-    },})
-}
-clearAlert()
-}
-useEffect(()=>{
-getSingleCerere()
-},[])
-
+//                 dispatch({type:GET_SINGLE_CONTRACT_BEGIN})
+//     try {
+//      const {data}=await authFetch(url);
+//         const {contractUtilizator,totalContractUtilizator}=data
+//         dispatch({type:GET_SINGLE_CERERI_SUCCESS,payload:{
+//             contractUtilizator,
+//             totalContractUtilizator,
+//         }})
+//     } catch (error) {
+//         console.log(error.response);
+//         // logoutUser()
+//     }
+//     clearAlert()
+// }
     return(
-<AppContext.Provider value={{...state,getSingleCerere,
-getSingleContract,
+<AppContext.Provider value={{...state,
+// getSingleContract,
 deleteCerers,
 deleteContracts,
-setEditCerers,
-setEditContract,
-editContract,
-editCerere,
 getCerers,
 getContracts,
 displayAlert,

@@ -22,10 +22,14 @@ import Alert from '../components/Alert'
     handleChange,
     cerers,
     date,sign,
-    alertType,
-    isEditing,
-    editCerere}=useAppContext()
+    alertType,}=useAppContext()
 
+        useEffect(()=>{
+        if(alertType ==='success'){
+        setTimeout(()=>{
+                navigate('/status')
+        },3000)
+        }},[alertType,navigate]);
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -33,10 +37,6 @@ import Alert from '../components/Alert'
             displayAlert();
             return
         }
-        // if(isEditing){
-        // editCerere()
-        // return
-        // }
         cerers()
         }
 
@@ -52,56 +52,55 @@ import Alert from '../components/Alert'
         <div className="title">
         </div>
         <form >
-                {/* <h3>{isEditing ? 'Editeaza cererea' : 'Completeaza cererea'}</h3> */}
-                {showAlert && <Alert/>}
             <p className="cerere">
                 CERERE PENTRU ACORDAREA UNUI LOC DE CAZARE ÎN CĂMINELE STUDENŢEŞTI <br />
-AN UNIVERSITAR 2023-2024</p>
+AN UNIVERSITAR 2023-2024</p>                
+
 <p> <br />
-<label htmlFor="name">Nume</label>
+<label htmlFor="name">Nume: </label>
         <input value={name} 
         type="text" 
+        placeholder="numele tau"
         name="name" 
         onChange={handleCerereInput}/>
 
         <br />
-<label htmlFor="lastName">Prenume</label>
+<label htmlFor="lastName">Prenume: </label>
         <input value={lastName} 
         type="text" 
         placeholder="prenumele tau" 
         name="lastName" 
         onChange={handleCerereInput}/>
         <br />
-<label htmlFor="address">Adresa(strada,numărul,blocul,scara,apartamentul,localitatea,judeţul):</label>
+<label htmlFor="address">Adresa(strada,numărul,blocul,scara,apartamentul,localitatea,judeţul): </label>
         <input value={address} 
         type="text" 
         placeholder="adresa completa" 
         name="address" 
         onChange={handleCerereInput}/>
         <br />
-<label htmlFor="tel">Numar de telefon</label>
+<label htmlFor="tel">Număr de telefon: </label>
         <input value={tel} 
         type="number" 
         placeholder="numarul tau" 
         name="tel" 
         onChange={handleCerereInput}/>
         <br />
-<label htmlFor="email">Email</label>
-        <br/>
+<label htmlFor="email">Email: </label>
         <input value={email} 
         type="email" 
         placeholder="youremail@gmail.com"
         name="email"
         onChange={handleCerereInput} />
         <br />
-<label htmlFor="studyYear">An de studiu</label>
+<label htmlFor="studyYear">Anul de studiu: </label>
         <input value={studyYear} 
         type="text" 
         placeholder="anul tau de studiu" 
         name="studyYear"
         onChange={handleCerereInput} />
         <br />
-<label htmlFor="grade">Media din anul precedent</label>
+<label htmlFor="grade">Media din anul precedent de studiu/media admiterii: </label>
         <input value={grade} 
         type="number" 
         placeholder="Media ta din anul precedent" 
@@ -109,7 +108,7 @@ AN UNIVERSITAR 2023-2024</p>
         onChange={handleCerereInput} />
         <br />
         <div>
-                <label htmlFor="situation">Situatie</label>
+                <label htmlFor="situation">Situaţia: </label>
                 <select 
                 name="situation" 
                 value={situation}
@@ -128,11 +127,11 @@ AN UNIVERSITAR 2023-2024</p>
             Declar pe proprie răspundere că datele prezentate în cerere sunt reale și complete. Declar că am luat cunostință de prevederile
             Regulamentului privind acordarea de locuri în căminele studențești pentru studenții din Universitatea Babeș-Bolyai. 
             </p>  
-            <label htmlFor="date">Data completării:</label>
-<input value={date} type="date" name="date" onChange={handleCerereInput}/>
-<br />
-<div className="btn"> 
-<label htmlFor="sign">Semnătură</label>
+            <div className="data">
+            <label htmlFor="date" >Data completării:</label> <br />
+<input value={date} type="date" name="date" onChange={handleCerereInput}/></div>
+<div className="sign"> 
+<label htmlFor="sign" >Semnătură</label>
         <br/>
         <input value={sign} 
         type="text" 
@@ -140,9 +139,11 @@ AN UNIVERSITAR 2023-2024</p>
         placeholder="nume şi prenume"
         onChange={handleCerereInput} />
         <br /> </div><br />        
-<br /> 
-             <button type="submit" className="btn"
-             onClick={handleSubmit}><Link to='/status'>Trimite</Link></button>
+<br /> <br /> <br /> <br />
+             <button type="submit"
+             className="button-text" 
+             onClick={handleSubmit}>Trimite cererea</button>
+                {showAlert && <Alert/>}
         </form>
             <button ><Link to='/contract' className="button-text">Ai fost deja acceptat/ă?</Link></button> <br /> <br /> 
 

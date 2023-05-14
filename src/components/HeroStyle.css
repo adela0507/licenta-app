@@ -46,6 +46,14 @@ p {
     color: var(--clr-grey-5);
     font-size: 20px;
 }
+.culoare{
+    margin-bottom: 1.25rem;
+    color:antiquewhite;
+    font-size: 20px;
+}
+table{
+    border:#6e1111;
+}
 
 @media screen and (min-width: 800px) {
     h1 {
@@ -429,3 +437,15 @@ align-items: left;
     text-transform: capitalize;
     cursor: pointer;
 }
+.sign{
+    float: right;
+    padding-right: 380px;
+}
+.data{
+    float: left;
+    padding-left: 380px;
+}
+.signcontract{
+        float: right;
+        padding-right: 40px;
+    }

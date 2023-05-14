@@ -2,20 +2,16 @@ import React from 'react'
 import { useAppContext } from '../context/appContext'
 import { Link } from 'react-router-dom'
 const Cerers = ({email,grade,name,lastName,_id}) => {
-const {setEditCerers,editCerere,isEditing,deleteCerers}=useAppContext()
-        if(isEditing){
-                editCerere()
-              return
-        }
+const {deleteCerers}=useAppContext()
   return (
     <div>
       <table border='1' width='800' height='200'>
         <tbody>
 <tr>
-  <th>nume</th>
-  <th>prenume</th>
-  <th>email</th>
-  <th>nota</th>
+  <th>Nume</th>
+  <th>Prenume</th>
+  <th>Email</th>
+  <th>Nota</th>
 
   </tr>     
   <tr>
@@ -25,10 +21,8 @@ const {setEditCerers,editCerere,isEditing,deleteCerers}=useAppContext()
     <td>{grade}</td> 
     </tr>
     </tbody>
-   </table>
-   <button type='button' className='btn' onClick={()=>deleteCerers(_id)}>Sterge</button>
-   {/* <Link to='/cereri' className='btn' onClick={()=>setEditCerers(_id)}>Editeaza</Link> */}
-     {/* <button type='button' className='btn' onClick={()=>{setEditCerers(_id)}}>Modifica</button> */}
+   </table> <br />
+   <button type='button' className='btn' onClick={()=>deleteCerers(_id)}>Sterge</button> <br /> <br />
     </div>
   )
 }

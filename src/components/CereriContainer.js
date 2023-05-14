@@ -11,11 +11,11 @@ const CereriContainer = () => {
 
     if(cererss.length===0){
        return <h2>nu exista cereri</h2>
-    }
+    } 
 
   return (
-    <div>
-      <h5>{totalCerers} cereri gasite </h5>
+    <div className='culoare'>
+      <h5>{totalCerers} cereri gasite </h5> <br />
       <div>
         {cererss.map((cereri)=>{
             return <Cerers key={cereri._id}{...cereri}/>
