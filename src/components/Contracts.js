@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAppContext } from '../context/appContext'
+import MailToContract from './MailToContract'
 const Contracts = ({emailContract,nameContract,telContract,_id}) => {
   const {deleteContracts}=useAppContext()
   return (
@@ -20,6 +21,7 @@ const Contracts = ({emailContract,nameContract,telContract,_id}) => {
     </tbody>
    </table> <br />
       <button type='button' className='btn' onClick={()=>deleteContracts(_id)}>Sterge</button> <br />
+      <MailToContract email={emailContract} >Email</MailToContract> <br /> <br />
     </div>
   )
 }
