@@ -7,25 +7,21 @@ const Contracts = ({emailContract,nameContract,telContract,_id,dadName,momName,s
   const {deleteContracts}=useAppContext()
   return (
     <div>
-      <table border='3' width='800' height='200'>
+      <table border='2' width='200' height='100' align='center'>
         <tbody>
 <tr>
     <th>Nume</th>
   <th>Email</th>
   <th>Telefon</th>
-  <th>Numele Tatalui</th>
-  <th>Numele Mamei</th>
   <th>An de studiu</th>
   <th>Adresa Studentului</th>
   <th>CI</th>
   <th>Numar CI</th>
-  <th>Adresa CI</th>
   <th>CNP</th>
   <th>Taxa</th>
   <th>Numarul caminului</th>
-  <th>Adresa Caminului</th>
+  <th>Adresa caminului</th>
   <th>Situatia</th>
-  <th>Semnatura</th>
 
 
   </tr>     
@@ -33,19 +29,15 @@ const Contracts = ({emailContract,nameContract,telContract,_id,dadName,momName,s
     <td>{nameContract}</td>
     <td>{emailContract}</td> 
     <td>{telContract}</td>
-     <td>{dadName}</td>
-    <td>{momName}</td>
     <td>{studyYearContract}</td>
     <td>{addressContract}</td>
     <td>{ci}</td>
     <td>{numberCI}</td>
-    <td>{ciAddress}</td>
     <td>{cnpContract}</td>
     <td>{taxe}</td>
     <td>{caminNumber}</td>
     <td>{caminAddress}</td>
     <td>{student}</td>
-    <td>{signContract}</td>
 
     </tr>
     </tbody>

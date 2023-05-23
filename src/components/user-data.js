@@ -1,26 +1,25 @@
 const rev=[
-    
-         {
+{
         id:1,
-        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/304926782_2295838853897500_3769233040676628903_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=XJx4EAGbA1QAX8zJtCh&_nc_ht=scontent.fclj3-1.fna&oh=00_AfCJOM46BWLCab8ZnxPR2EyIKF4-m-ZaGDxMIDlVOUSGYQ&oe=644FBD3D',
+        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/304926782_2295838853897500_3769233040676628903_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GMH9O9Uj4moAX91tHKh&_nc_ht=scontent.fclj3-1.fna&oh=00_AfDaDdDMcw1M8fogdfo70LhpXLDrfqULmPqL7R-jnG5CmQ&oe=64715B7D',
         title:'Moisin Andrei',
         description:'Locuind în căminul Economica 2 am avut parte de un confort destul de ridicat, în special prin faptul că acesta se află la 2 minute de facultate și stăm doar 3 persoane în cameră. Locuind în același cămin cu mai multe persoane cunoscute, m-a ajutat foarte mult să mă adaptez mai ușor la viața în cămin și mi-a permis să am o legătură mai strânsă cu aceștia. Personal, sunt foarte mulțumit de viața la cămin și consider că mi se potrivește stilului meu de viață.',
     },
      {
         id:2,
-        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/312503718_3329422830638391_2498229565652699503_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DT83eqtyCoEAX9-s1QK&_nc_ht=scontent.fclj3-1.fna&oh=00_AfD3Xp_ggUnhYrIGJZ6hONi8RHIcjqDGvP7GZZaqHaVCQg&oe=644F1F37',
+        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/312503718_3329422830638391_2498229565652699503_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NMS1QqBzhogAX_EhIBO&_nc_ht=scontent.fclj3-1.fna&oh=00_AfAl8cDBLqDw3b6NLD8M0tWfei6V9zHyaoqye8R8BNZNXQ&oe=6470BD77',
         title:'Dănilă Cosmina',
         description:'Fiind cazată la caminul 3, din Haşdeu de aproximativ 2 ani pot spune că a devenit casa mea. Stând 5 în cameră, am reuşit să ies din zona de confort şi să învăţ să convieţuiesc şi cu alte persoane. De asemenea, viaţa la cămin iţi oferă foarte mulţi prieteni noi şi experienţe pe care nu le-ai putea trăi în altă parte. Personal, dacă ar trebui să dau timpul înapoi, aş alege tot viaţa la cămin.',
     },
     {
         id:3,
-        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/297817397_2690898617707012_2799769387077823241_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=P1UbFS8q3bIAX_BD8hA&_nc_oc=AQl0deZD-vVu0btOmE1yMPylNV5N2KQ0j6QTEs3SE3H5xfhMu7KO5ILIuDEsYs_ehhU&_nc_ht=scontent.fclj3-1.fna&oh=00_AfAe6FhiFzVfk6Iy983CA_GdJKxQF8qYuTvnbkeuQQBdXw&oe=645039D2',
+        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/297817397_2690898617707012_2799769387077823241_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6wj4qKxmJxcAX_gsBkS&_nc_oc=AQkSpt1wqHxK-GtHc80qZS-G1yIVsohQrOVYiKl7soy2gsxW4xj1qxTm3yxWUu8BFhE&_nc_ht=scontent.fclj3-1.fna&oh=00_AfDdmQdvv4Y9J6R1uOil3M5zrO1X3bS2RGkjFMNNPwKf0w&oe=6471D812',
         title:'Corpodean Vlad',
         description:'Căminul în care am locuit este căminul studenţesc Enjoy, fiind unul privat.Viața de cămin este o viață diferită in multe sensuri. Pe cât de frumoasă este viaşa petrecuctă aici, tot pe atât de dificilă poate fi uneori. Având norocul să pic cu colegi foarte minunați de cameră, nu am prins părțile dificile. Viața de cămin este una unica, care merită experimentată. Destul de curat și liniştitor. ',
     },
     {
         id:4,
-        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/314414685_946229493014484_2786944778897829222_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=bBKXiKtdVrMAX-oY64u&_nc_ht=scontent.fclj3-1.fna&oh=00_AfBGY8XoXUw26yS-P0ZNzxyoH-hQM4VwOEDpSxtI6N0fFA&oe=644FDC8A',
+        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/318554782_962507208053379_6558510474139533338_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=wQYLsP9OgNUAX-pNLW4&_nc_ht=scontent.fclj3-1.fna&oh=00_AfAAelkqfRvQOavO-5N_5JjPrpBuKUZ8VRkk7gDkf-THpA&oe=6470EF26',
         title:'Ştefănuţ Cătălin',
         description:'Pentru mine, viața la cămin este ca şi cum ai merge într-o aventură în fiecare zi. De la începutul anului acesta școlar, când am depus cererea pentru cămin, nu știam la ce să ma aştept, doar la faptul că speram că o să prind un loc. În cele din urmă, am nimerit în faimosul Cămin 16,  Într-o cameră cu alte 4 suflete lângă mine, unde nu știi niciodată ce te așteaptă ziua următoare sau la ce oră își vor pune colegii alarma să se trezească de dimineață. Primele zile au fost mai dificile până ne-am obișnuit cu fiecare, să ne învățăm obiceiurile și cum am putea să facem să ne înțelegem cât mai bine, din moment ce suntem prinși în acea cameră pentru acest an școlar. Dar, cu toate diferențele noastre, consider că ne înțelegem destul de bine și am învățat să conviețuim. Cred că o să îmi lipsească trezitul de la 6 jumătate al colegilor care mearg la facultate, iar eu încercând să mai răpesc puțin somn. Dar fiecare lucru în viața are drumul lui și consider pasul ăsta unul destul important în viața noastră, că toată această camaraderie o să ia sfârșit la momentul începerii vacantei de vara! ',
     },
@@ -32,7 +31,7 @@ const rev=[
     },
     {
         id:6,
-        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/339657113_3149018358736488_1554025947824059623_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0_V1u1ABFuQAX95Xp67&_nc_ht=scontent.fclj3-1.fna&oh=00_AfC0ofXyWALix-yu5JKBVBmagvP_Y97rNN9n5D6ueYMUjw&oe=6449BF63',
+        image:'https://scontent.fclj3-1.fna.fbcdn.net/v/t39.30808-6/339657113_3149018358736488_1554025947824059623_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=JEha5TPbQ-QAX_WKt6b&_nc_ht=scontent.fclj3-1.fna&oh=00_AfCPpENZ3NbJfC76wD7VVv8zybOxvRCHwiIsnJ4VQYbNsA&oe=64714C63',
         title:'Miclea Adela',
         description:'Locuind în căminul Economica 1, pe timpul verii am reuşit să gust din cum e adevărata viaţă de cămin. În cameră am fost repartizată alături de 2 prietene, având 2 băi în camera noastră(mai mult decât ţi-ai putea dorii de la viaţa petrecită într-un cămin). Am reuşit să mă acomodez uşor, fiind la o distanţă foarte mică de FSEGA şi Iulius Mall. ',
     },

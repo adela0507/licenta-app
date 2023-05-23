@@ -178,7 +178,7 @@ eliberat de
              placeholder="nr tau de telefon" 
             onChange={handleContractInput}
 /> 
-e-mail 
+email 
              <label htmlFor="email"></label>
             <input  value={emailContract}
             type="email" 
@@ -186,7 +186,7 @@ e-mail
             placeholder="emailul tau"
              onChange={handleContractInput}
 /> 
-chirias.  <br />  <br />
+chiriaş.  <br />  <br />
 1.2.1 Categoria studentului cazat în funcţie de subvenţia de cămin <br />
 <div>
                 <label htmlFor="student">Situatie</label>
@@ -203,7 +203,9 @@ chirias.  <br />  <br />
         </div>
 <br />
 <strong> Art. 2. Obiectivul Contractului</strong> <br />
-<p>2.1 Obiectul contractului îl constituie închirierea, pe parcursul anului universitar, a unui loc în căminul <input type="text" name="caminNumber" id="caminNumber" placeholder="in ce camin ai fost repartizta?" value={caminNumber} onChange={handleContractInput}/>,situat la adresa Cluj Napoca, str. <input type="text" placeholder="adresa completa" name="caminAddress" value={caminAddress} onChange={handleContractInput}/>, a instalaţiilor şi spaţiilor 
+<p>2.1 Obiectul contractului îl constituie închirierea, pe parcursul anului universitar, a unui loc în căminul <input type="text" name="caminNumber" id="caminNumber" placeholder="in ce camin ai fost repartizta?" value={caminNumber} onChange={handleContractInput}/>
+,situat la adresa Cluj Napoca, str. <input type="text" placeholder="adresa completa" name="caminAddress" value={caminAddress} onChange={handleContractInput}/>,
+ a instalaţiilor şi spaţiilor 
 comune aferente, a bunurilor înregistrate în inventar, proprietate a Universităţii Babeş-Bolyai, conform procesului-verbal de predare-primire întocmit la cazare şi a celorlalte anexe ale prezentului
 contract. Pentru eficientizarea spaţiilor de cazare în timpul anului universitar, chiriaşul poate fi mutat în altă cameră a aceluiaşi cămin. </p>
 <br /> <br />
@@ -339,7 +341,6 @@ cazare în căminele studențești aprobat de Senatul Universității Babeș- Bo
 Babeș-Bolyai referitoare la taxele și tarifele de închiriere, Ordonanță nr. 97/2005 privind evidență, domiciliul, 
 reședința și actele de identitate ale cetățenilor români, Legea nr. 349/2002 pentru prevenirea și combaterea efectelor 
 consumului produselor din tutu, Legea 448/2006 privind protecția și promovarea drepturilor persoanelor cu handicap, Legea nr. 307/2006 privind apărarea împotriva incendiilor.
-Încheiat în 2 (două) exemplare, câte unui pentru fiecare parte, azi, <input value={dateI} name="dateI" type="date" onChange={handleContractInput}/>.
 <br />
 
 
