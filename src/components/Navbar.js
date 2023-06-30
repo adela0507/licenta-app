@@ -106,5 +106,4 @@ const Wrapper = styled.nav`
         }
     
 `
-
 export default Navbar;

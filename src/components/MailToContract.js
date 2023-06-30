@@ -14,8 +14,8 @@ const MailToContract = ({email,subject,body}) => {
 };
 
 MailToContract.defaultProps = {
-  subject: 'Modificare cerere',
-  body: 'Bună ziua, am verificat contractul dumneavoastră şi am observat că      nu este completată corect. Inlocuiţi aceasta informaţie cu        . Vă rog să completaţi din nou cererea cu datele corespunzătoare! O zi frumoasă!',
+  subject: 'Modificare contract',
+  body: 'Buna ziua, am verificat contractul dumneavoastra si am observat ca (informatia) nu este completata corect. Inlocuiti aceasta informatie cu (informtia corecta). Va rog sa completati din nou cererea cu datele corespunzatoare! O zi frumoasa!',
 };
 
 export default MailToContract

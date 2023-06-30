@@ -1,4 +1,4 @@
-import React, {Component,useEffect,useState} from "react";
+import React, {useEffect,useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from '../src//context/appContext'
 import Alert from "./components/Alert";
@@ -20,14 +20,6 @@ export const Register=()=>{
     const handleShow=()=>{
         setShow(!show)
     }
-//     const toggleMember=()=>{
-//     setValue({...value, isMember: !value.isMember})
-//   }
-    // const [email,setEmail]=useState('');
-    // const [password,setPassword]=useState('');
-    // const [name,setName]=useState('');
-    // const[lastname,setLastName]=useState('');
-
     const handleSubmit=async(e)=>{
         e.preventDefault();
          const{email,name,password,isMember}=value;
@@ -78,7 +70,7 @@ if(user){
         <input value={value.password} 
         onChange={handleChange} 
         type={show?"text":"password"} placeholder="*******" name="password" id="password" />
-        <button className="btn" onClick={handleShow}>Show</button>
+        <button className="btn" onClick={handleShow}>Arată parola</button>
 
         <br/>
         <br/>

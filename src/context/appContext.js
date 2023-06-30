@@ -288,26 +288,8 @@ const deleteContracts=async(contractId)=>{
     }
     clearAlert()
 }
-// const getSingleContract=async()=>{
-//        let url=`/contracts`
-
-//                 dispatch({type:GET_SINGLE_CONTRACT_BEGIN})
-//     try {
-//      const {data}=await authFetch(url);
-//         const {contractUtilizator,totalContractUtilizator}=data
-//         dispatch({type:GET_SINGLE_CERERI_SUCCESS,payload:{
-//             contractUtilizator,
-//             totalContractUtilizator,
-//         }})
-//     } catch (error) {
-//         console.log(error.response);
-//         // logoutUser()
-//     }
-//     clearAlert()
-// }
     return(
 <AppContext.Provider value={{...state,
-// getSingleContract,
 deleteCerers,
 deleteContracts,
 getCerers,

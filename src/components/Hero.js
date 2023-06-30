@@ -1,4 +1,4 @@
-import React,{ useState,useEffect } from "react";
+import React from "react";
 import "./HeroStyle.css";
 import { Link } from "react-router-dom";
 import img1 from'../components/img1.jpg';
@@ -16,7 +16,7 @@ function Hero(){
    </div>
         <button className="button-home"><Link to='/cereri' className="button-text">Completează acum cererea!</Link></button> 
 <Review/>
-        <button className="button-home"><Link to='/getAll' className="button-text">Vezi cererile</Link></button> 
+        <button className="button-home"><Link to='/getAll' className="button-text">Vezi cererile/contractele</Link></button> 
 
 </section>
 

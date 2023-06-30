@@ -183,8 +183,8 @@ const PDFButtonContract = ({ emailContract, nameContract, telContract, _id, dadN
 
   return (
     <button type="button" onClick={handleClick}>
-      Generare PDF
-    </button>
+      Generare contract în format PDF
+    </button> 
   );
 };
 

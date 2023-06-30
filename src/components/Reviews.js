@@ -32,7 +32,7 @@ useEffect(() => {
       
         <section className="section">
         <div className="title">
-            <h2> <span className="white">Reviews</span></h2>
+            <h2> <span className="white">Recenzii</span></h2>
         </div>
         <div className="section-center">
             {review.map((reviews,reviewsIndex)=>{
@@ -64,7 +64,6 @@ useEffect(() => {
                  <FiChevronLeft /> </button>
         <button className="next" onClick={() => setIndex(index + 1)}>
                   <FiChevronRight /></button>
-        <br />
         </div> 
         </section>
     );

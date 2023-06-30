@@ -1,4 +1,3 @@
-import React from 'react'
 import { LOGOUT_USER,
     CREATE_CERERE_BEGIN,
     CREATE_CERERE_ERROR,
@@ -7,9 +6,6 @@ import { LOGOUT_USER,
     CREATE_CONTRACT_ERROR,
     CREATE_CONTRACT_SUCCESS,
     CREATE_CERERE_SUCCESS,
-    GET_SINGLE_PRODUCT_BEGIN,
-    GET_SINGLE_PRODUCT_ERROR,
-    GET_SINGLE_PRODUCT_SUCCESS,
     SIDEBAR_CLOSE,
     SIDEBAR_OPEN,
      DISPLAY_ALERT,
@@ -20,22 +16,10 @@ import { LOGOUT_USER,
      LOGIN_USER_BEGIN,
      LOGIN_USER_ERROR,
      LOGIN_USER_SUCCESS,
-     SET_EDIT_CERERI,
-    SET_EDIT_CONTRACT,
     GET_CERERI_BEGIN,
     GET_CERERI_SUCCESS,
     GET_CONTRACT_BEGIN,
     GET_CONTRACT_SUCCESS,
-    EDIT_CERERE_BEGIN,
-    EDIT_CERERE_ERROR,
-    EDIT_CERERE_SUCCESS,
-    EDIT_CONTRACT_BEGIN,
-    EDIT_CONTRACT_ERROR,
-    EDIT_CONTRACT_SUCCESS,
-    GET_SINGLE_CERERI_BEGIN,
-    GET_SINGLE_CERERI_SUCCESS,
-    GET_SINGLE_CONTRACT_BEGIN,
-    GET_SINGLE_CONTRACT_SUCCESS,
     DELETE_CERERI_BEGIN,
     DELETE_CONTRACT_BEGIN,
  } from "./action";
@@ -66,29 +50,7 @@ const reducer = (state,action) => {
             alertText:'',
         }
     }
-    if(action===GET_SINGLE_PRODUCT_BEGIN){
-        return {
-            ...state,
-        }
-    }
-    if(action===GET_SINGLE_PRODUCT_ERROR){
-        
-            return{
-            ...state,
-            showAlert:true,
-            alertType:'danger',
-            alertText:action.payload.msg,
-        }
-        
-    }
-    if(action===GET_SINGLE_PRODUCT_SUCCESS){
-        return{
-            ...state,
-           
-            showAlert:true,
-            alertType:'success',
-        }
-    }
+    
     if(action.type===REGISTER_USER_BEGIN){
         return{
             ...state,
@@ -226,21 +188,6 @@ const reducer = (state,action) => {
             totalCerers:action.payload.totalCerers,
             alertType:'success',
             alertText:'toate cererile',
-        }
-    
-    }if(action.type===GET_SINGLE_CONTRACT_BEGIN){
-        return{
-            ...state,
-            showAlert:false,
-        }
-    }
-    if(action.type===GET_SINGLE_CONTRACT_SUCCESS){
-        return {
-            ...state,
-            showAlert:true,
-            contractUtilizator:action.payload.contractUtilizator,
-            totalContarctUtilizator:action.payload.totalContractUtilizator,
-      
         }
     }
     if(action.type===GET_CONTRACT_BEGIN){

@@ -1,7 +1,3 @@
-import {Component} from "react";
-
-
-
 export const MenuItems=[
     {
         title:"Acasă",
@@ -29,11 +25,6 @@ export const MenuItems=[
         title:"Contract",
         url:"/contract",
         cName :"nav-links"
-    },
-      {
-        title:"Status",
-        url:"/status",
-        cName :"nav-links-web"
     }
 ]
 

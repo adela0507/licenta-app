@@ -60,7 +60,7 @@ AN UNIVERSITAR 2023-2024</p>
 <label htmlFor="name">Nume: </label>
         <input value={name} 
         type="text" 
-        placeholder="numele tau"
+        placeholder="numele tău"
         name="name" 
         onChange={handleCerereInput}/>
 
@@ -68,21 +68,21 @@ AN UNIVERSITAR 2023-2024</p>
 <label htmlFor="lastName">Prenume: </label>
         <input value={lastName} 
         type="text" 
-        placeholder="prenumele tau" 
+        placeholder="prenumele tău" 
         name="lastName" 
         onChange={handleCerereInput}/>
         <br />
 <label htmlFor="address">Adresa(strada,numărul,blocul,scara,apartamentul,localitatea,judeţul): </label>
         <input value={address} 
         type="text" 
-        placeholder="adresa completa" 
+        placeholder="starda Mălinului,bl 70 scara B, loc Ocna Mureş, jud Alba" 
         name="address" 
         onChange={handleCerereInput}/>
         <br />
 <label htmlFor="tel">Număr de telefon: </label>
         <input value={tel} 
         type="number" 
-        placeholder="numarul tau" 
+        placeholder="0745822543" 
         name="tel" 
         onChange={handleCerereInput}/>
         <br />
@@ -96,14 +96,14 @@ AN UNIVERSITAR 2023-2024</p>
 <label htmlFor="studyYear">Anul de studiu: </label>
         <input value={studyYear} 
         type="text" 
-        placeholder="anul tau de studiu" 
+        placeholder="1/2/3" 
         name="studyYear"
         onChange={handleCerereInput} />
         <br />
 <label htmlFor="grade">Media din anul precedent de studiu/media admiterii: </label>
         <input value={grade} 
         type="number" 
-        placeholder="Media ta din anul precedent" 
+        placeholder="8.22" 
         name="grade"
         onChange={handleCerereInput} />
         <br />

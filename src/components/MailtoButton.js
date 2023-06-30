@@ -15,7 +15,7 @@ const MailtoButton = ({ email, subject, body }) => {
 
 MailtoButton.defaultProps = {
   subject: 'Modificare cerere',
-  body: 'Bună ziua, am verificat cererea dumneavoastră şi am observat că      nu este completată corect. Inlocuiţi aceasta cu        . Vă rog să completaţi din nou cererea cu datele corespunzătoare! O zi frumoasă!',
+  body: 'Buna ziua, am verificat cererea dumneavoastra si am observat ca (care este problema) nu este completata corect. Inlocuiti aceasta cu (informatii corecte). Va rog sa completati din nou cererea cu datele corespunzatoare! O zi frumoasa!',
 };
 
 export default MailtoButton;

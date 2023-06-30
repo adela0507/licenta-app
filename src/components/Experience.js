@@ -65,8 +65,7 @@ function Experience(){
                 Căminul 14 din Haşdeu este localizat pe strada Bogdan Petriceicu nr 45. <br />
                 Căminul 3 din Haşdeu este localizat pe strada Bogdan Petriceicu nr 45. <br />
                 Căminul 5 din Haşdeu este localizat pe strada Bogdan Petriceicu nr 45. <br />
-                Căminul 1 Economica este localizat pe strada Teodor Mihali nr 59. <br />
-                Căminul Enjoy este localizat pe strada  Alexandru Vaida Voevod nr 55.</p>
+                Căminele 1,2 Economica este localizat pe strada Teodor Mihali. <br /></p>
             </sectoin>
 
 <br /><br />

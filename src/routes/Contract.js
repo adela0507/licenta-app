@@ -85,6 +85,7 @@ return(
             <input  value={nameContract}
             type="text" 
             name="nameContract" 
+            placeholder="numele tău"
             onChange={handleContractInput}
             /> 
                 fiul (fica) lui
@@ -167,7 +168,7 @@ eliberat de
             <input value={cnpContract}
             type="number"
             name="cnpContract"
-             placeholder="" 
+             placeholder="6020407011181" 
             onChange={handleContractInput}
 /> 
             telefon 
@@ -215,7 +216,8 @@ contract. Pentru eficientizarea spaţiilor de cazare în timpul anului universit
 <br /> <br />
 
 <strong>Art. 4. VALOAREA CONTRACTULUI</strong> <br />
-4.1. Tariful de cazare/loc/luna este de <input value={taxe} name="taxe" type="number" onChange={handleContractInput} /> lei. <br />
+4.1. Tariful de cazare/loc/luna este de <input value={taxe} name="taxe" type="number" placeholder="100 "
+onChange={handleContractInput} /> lei. <br />
 4.2. Plata chiriei se va face lunar, în avans, pentru luna următoare, până cel târziu în ultima zi lucrătoare a lunii în curs.
  În măsură în care într-o luna, folosință de către chiriaș a locului de cazare este pentru o perioada de 15 zile sau mai puțin, 
  acesta va achita 50% din tariful integral de cazare afferent unei luni, iar în cazul in care folosință locului de cazare este 

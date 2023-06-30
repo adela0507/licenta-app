@@ -14,14 +14,14 @@ const Contracts = ({emailContract,nameContract,telContract,_id,dadName,momName,s
   <th>Email</th>
   <th>Telefon</th>
   <th>An de studiu</th>
-  <th>Adresa Studentului</th>
+  <th>Adresa studentului</th>
   <th>CI</th>
-  <th>Numar CI</th>
+  <th>Număr CI</th>
   <th>CNP</th>
-  <th>Taxa</th>
-  <th>Numarul caminului</th>
-  <th>Adresa caminului</th>
-  <th>Situatia</th>
+  <th>Taxă</th>
+  <th>Numărul căminului</th>
+  <th>Adresa căminului</th>
+  <th>Situaţia</th>
 
 
   </tr>     
@@ -42,8 +42,8 @@ const Contracts = ({emailContract,nameContract,telContract,_id,dadName,momName,s
     </tr>
     </tbody>
    </table> <br />
-      <button type='button' className='btn' onClick={()=>deleteContracts(_id)}>Sterge</button> <br />
-      <MailToContract email={emailContract} >Email</MailToContract> <br /> <br />
+      <button type='button' className='btn' onClick={()=>deleteContracts(_id)}>Şterge contractul</button> <br />
+      <MailToContract email={emailContract} ></MailToContract> <br /> <br />
       <PDFButtonContract
         emailContract={emailContract}
         nameContract={nameContract}

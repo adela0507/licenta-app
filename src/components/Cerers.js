@@ -1,6 +1,5 @@
 import React from 'react';
 import { useAppContext } from '../context/appContext';
-import { Link } from 'react-router-dom';
 import MailtoButton from './MailtoButton';
 import PDFButton from './PDFButton';
 const Cerers = ({ name, lastName, email, grade, address, tel, _id, studyYear, situation, date, sign }) => {
@@ -19,11 +18,11 @@ const Cerers = ({ name, lastName, email, grade, address, tel, _id, studyYear, si
             <th>Prenume</th>
             <th>Email</th>
             <th>Adresa</th>
-            <th>Telefon</th>
+            <th>Nr de telefon</th>
             <th>An de studiu</th>
-            <th>Situatie</th>
+            <th>Situaţie</th>
             <th>Data</th>
-            <th>Sign</th>
+            <th>Semnătură</th>
             <th>Nota</th>
           </tr>
           <tr>
@@ -42,11 +41,11 @@ const Cerers = ({ name, lastName, email, grade, address, tel, _id, studyYear, si
       </table>
       <br />
       <button type='button' className='btn' onClick={handleDelete}>
-        Sterge
+        Şterge cererea
       </button>
       <br />
       <br />
-      <MailtoButton email={email}>Email</MailtoButton>
+      <MailtoButton email={email}></MailtoButton>
       <br />
       <br />
       <PDFButton
