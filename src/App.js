@@ -6,7 +6,6 @@ import{Route,Routes} from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import {Home,GetAllCereri, About,Cereri,Error,Status,Camine,Contract,StatusContract}from './routes';
 
-
 function App() {
     const[user,setUser]=useState(null);
 
